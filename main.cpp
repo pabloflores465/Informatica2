@@ -322,7 +322,7 @@ int main() {
                              << (tazaDescuento[seguro]) * 100 << "%" << endl;
                         break;
                     }
-                        //Seguro Agromercantil
+                        //Seguro Agromercantil |
                     case 1: {
                         cout << aseguradora[seguro] << endl;
                         cout << "Su copago es: \n"
@@ -377,6 +377,9 @@ int main() {
                         cout << "Total de ventas: ";
                         cout << "\n";
                         break;
+
+                    case 2:
+                        cout << "pablo gei ";
                 }
 
                 break;
