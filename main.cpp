@@ -42,6 +42,9 @@ int main() {
     //Modulo 2
     //Taza de descuento fija
     float tazaDescuento[5]{0.25,0.60,0.40,0.5,0.75,};
+    // Movi esto hacia para aca arriba para poder llamar esto en mi modulo 3
+    string titulartarjeta,fechavencimiento,codigotarjeta,numerotarjeta;
+    float suma=0.0;
 
     do {
         cout << "Para modulo de farmacia presione 1\n";
@@ -53,11 +56,10 @@ int main() {
         switch (modulos) {
             case 1: {
                 int modulo1;
-                float suma=0.0;
                 int i=0;
                 int ii=0;
                 int descuentoseguro;
-                string titulartarjeta,fechavencimiento,codigotarjeta,numerotarjeta;
+
                 cout<<"Este modulo es para comprar productos, para salir de este modulo presione (0)\n"<<endl;
 
                 cout<<"Los productos que usted puede elegir son los siguientes: \n";
@@ -281,7 +283,6 @@ int main() {
                     }
                     cout<<"Ingrese la información de la tarjeta para pagar:\n\n"
                         <<"Ingrese el nombre del titular de la tarjeta:\n";
-
                     cin>>titulartarjeta;
                     cout<<"\n"
                         <<"Ingrese la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
@@ -360,6 +361,7 @@ int main() {
                 break;
             }
             case 3: {
+                // Puse esta variable local "info" para que el admin decida que tipo de informacion desplegar
                 int info;
                 cout << "Ingrese el tipo de información que desea ver" << "\n";
                 cout << "Ingrese 1 para desplegar la informacion de la famacia \n";
@@ -370,20 +372,32 @@ int main() {
                     case 1:
                         cout<<"Resumen del día \n";
                         cout << "Inventario de medicamentos:  \n";
-                        cout << existenciasfarmacos[10] <<  "\n" ;
-                        cout << "Total de medicamentos vendidos: \n";
+                        cout << nombrefarmacos[0] << " " << existenciasfarmacos [0]  <<  "\n" ;
+                        cout << nombrefarmacos[1] << " " <<  existenciasfarmacos [1]  <<  "\n" ;
+                        cout << nombrefarmacos[2] << " " <<  existenciasfarmacos [2]  <<  "\n" ;
+                        cout << nombrefarmacos[3] << " " <<  existenciasfarmacos [3]  <<  "\n" ;
+                        cout << nombrefarmacos[4] << " " <<  existenciasfarmacos [4]  <<  "\n" ;
+                        cout << nombrefarmacos[5] << " " <<  existenciasfarmacos [5]  <<  "\n" ;
+                        cout << nombrefarmacos[6] << " " <<  existenciasfarmacos [6]  <<  "\n" ;
+                        cout << nombrefarmacos[7] << " " <<  existenciasfarmacos [7]  <<  "\n" ;
+                        cout << nombrefarmacos[8] << " " <<  existenciasfarmacos [8]  <<  "\n" ;
+                        cout << nombrefarmacos[9] << " " <<  existenciasfarmacos [9]  <<  "\n" ;
+                        cout << "\n";
+
+                        cout << "Total de medicamentos vendidos: \n" << endl ;
                         cout << "\n";
                         cout << "Total de clientes que compraron el día de hoy: \n";
-                        cout << "\n";
-                        cout << "Total de ventas: ";
-                        cout << "\n";
+                        cout << titulartarjeta << "\n"  ;
+                        cout << "Total de ventas: \n";
+                        cout << suma << "\n";
                         break;
 
                     case 2:
                         cout << "Informacion de las aseguradoras \n ";
                         cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
-                        cout << " \n";
+                        cout << "\n";
                         cout << "El seguro mas usado es: \n";
+                        cout << "insertar el seguro \n";
 
                 }
 
