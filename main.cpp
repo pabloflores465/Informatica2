@@ -380,7 +380,11 @@ int main() {
                         break;
 
                     case 2:
-                        cout << "pablo gei ";
+                        cout << "Informacion de las aseguradoras \n ";
+                        cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
+                        cout << " \n";
+                        cout << "El seguro mas usado es: \n";
+
                 }
 
                 break;
