@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 int main() {
@@ -286,8 +287,7 @@ int main() {
                     }
                     cout<<"Ingrese la información de la tarjeta para pagar:\n\n"
                         <<"Ingrese el nombre del titular de la tarjeta:\n";
-                    cin >> titulartarjeta;
-                    titulartarjeta=nombre[lola];
+                    cin>>nombre[lola];
                     lola++;
                     cout<<"\n"
                         <<"Ingre se la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
@@ -315,7 +315,8 @@ int main() {
                     <<"2=Aseguradora General, S.A.\n"
                     <<"3=Seguros el Roble\n"
                     <<"4=Mapfre\n";
-                cin>>seguro;
+                getline(cin,nombre[lola]);
+                lola++;
                 //Aqui se Muestra la informacion de la aseguradora seleccionada
                 switch(seguro) {
                     //Seguros GyT
@@ -388,7 +389,7 @@ int main() {
                         cout << "\n";
                         cout << "Total de clientes que compraron el día de hoy: \n";
                         for (int i = 0; i < lola ; ++i) {
-
+                            cout<<nombre[i]<<endl;
                         }
                         cout << "Total de ventas: \n";
                         cout << suma << "\n";
