@@ -34,8 +34,7 @@ int main() {
 
     //Modulo 1
     //Existencias de los farmacos
-    double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20
-    };
+    double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
 
     //Modulo 2
     //Aseguradoras Usadas
@@ -315,8 +314,7 @@ int main() {
                     <<"2=Aseguradora General, S.A.\n"
                     <<"3=Seguros el Roble\n"
                     <<"4=Mapfre\n";
-                getline(cin,nombre[lola]);
-                lola++;
+                    cin>>seguro;
                 //Aqui se Muestra la informacion de la aseguradora seleccionada
                 switch(seguro) {
                     //Seguros GyT
