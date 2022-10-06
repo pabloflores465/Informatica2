@@ -310,8 +310,7 @@ int main() {
                     <<"2=Aseguradora General, S.A.\n"
                     <<"3=Seguros el Roble\n"
                     <<"4=Mapfre\n";
-                getline(cin,nombre[lola]);
-                lola++;
+                    cin>>seguro;
                 //Aqui se Muestra la informacion de la aseguradora seleccionada
                 switch(seguro) {
                     //Seguros GyT
