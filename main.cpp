@@ -45,6 +45,10 @@ int main() {
     // Movi esto hacia para aca arriba para poder llamar esto en mi modulo 3
     string titulartarjeta,fechavencimiento,codigotarjeta,numerotarjeta;
     float suma=0.0;
+    int seguro=0;
+    int descuentoseguro;
+    int lola=0;
+    string nombre[200];
 
     do {
         cout << "Para modulo de farmacia presione 1\n";
@@ -58,7 +62,6 @@ int main() {
                 int modulo1;
                 int i=0;
                 int ii=0;
-                int descuentoseguro;
 
                 cout<<"Este modulo es para comprar productos, para salir de este modulo presione (0)\n"<<endl;
 
@@ -283,9 +286,11 @@ int main() {
                     }
                     cout<<"Ingrese la información de la tarjeta para pagar:\n\n"
                         <<"Ingrese el nombre del titular de la tarjeta:\n";
-                    cin>>titulartarjeta;
+                    cin >> titulartarjeta;
+                    titulartarjeta=nombre[lola];
+                    lola++;
                     cout<<"\n"
-                        <<"Ingrese la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
+                        <<"Ingre se la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
                     cin>>fechavencimiento;
                     cout<<"\n"
                         <<"Ingrese el numero de su tarjeta, ejemplo 123456789\n";
@@ -296,13 +301,10 @@ int main() {
                     cout<<"\n\n"
                         <<"PAGO EXITOSO\n\n";
                 }
-
-
                 break;
             }
             case 2: {
                 //Inicia el Modulo 2
-                int seguro=0;
                 //Variable que selecciona el seguro
 
                 //Pido al usuario que ingrese el seguro
@@ -314,7 +316,6 @@ int main() {
                     <<"3=Seguros el Roble\n"
                     <<"4=Mapfre\n";
                 cin>>seguro;
-
                 //Aqui se Muestra la informacion de la aseguradora seleccionada
                 switch(seguro) {
                     //Seguros GyT
@@ -383,35 +384,31 @@ int main() {
                         cout << nombrefarmacos[8] << " " <<  existenciasfarmacos [8]  <<  "\n" ;
                         cout << nombrefarmacos[9] << " " <<  existenciasfarmacos [9]  <<  "\n" ;
                         cout << "\n";
-
                         cout << "Total de medicamentos vendidos: \n" << endl ;
                         cout << "\n";
                         cout << "Total de clientes que compraron el día de hoy: \n";
-                        cout << titulartarjeta << "\n"  ;
+                        for (int i = 0; i < lola ; ++i) {
+
+                        }
                         cout << "Total de ventas: \n";
                         cout << suma << "\n";
                         break;
-
                     case 2:
                         cout << "Informacion de las aseguradoras \n ";
                         cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
+                        if (descuentoseguro=1)
+                            cout << titulartarjeta ;
                         cout << "\n";
                         cout << "El seguro mas usado es: \n";
                         cout << "insertar el seguro \n";
-
                 }
-
                 break;
-
             }
             default: {
                 cout << "Error ingrese un numero valido\n\n";
                 break;
             }
         }
-
-
-
     }
     while (modulos != 4);
 
