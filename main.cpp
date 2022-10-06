@@ -50,6 +50,16 @@ int main() {
     int descuentoseguro;
     int lola=0;
     string nombre[200];
+    string usuario, contraseña;
+
+    cout << "Ingrese el usuario: ";
+    cin >> usuario;
+    cout << "Ingrese la contraseña: ";
+    cin >> contraseña;
+    if (usuario == "Admin" && contraseña == "Contra");
+        else {
+            cout << "Usuario incorrecto";
+        }
 
     do {
         cout << "Para modulo de farmacia presione 1\n";
