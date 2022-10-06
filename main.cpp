@@ -233,11 +233,6 @@ int main() {
 
                 if(ii!=0) {
                     cout<<"¿Usted cuenta con alguno de los siguientes seguro?\n"
-                        <<"Seguros GyT\n"
-                        <<"Seguro Agromercantil\n"
-                        <<"Aseguradora General, S.A.\n"
-                        <<"Seguros el Roble\n"
-                        <<"Mapfre\n"
                         <<"Presione 1 para si y 0 para no\n";
                     cin>>descuentoseguro;
                     //AQUI SEÑORES
