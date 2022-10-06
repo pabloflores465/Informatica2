@@ -115,6 +115,7 @@ int main() {
                     <<"Descripcion: "<<descripcionfarmacos[6]<<" "<<"("<<cantidadfarmacos[6]<<")"<<"\n"
                     <<"Las existencias de este producto son: "<<existenciasfarmacos [6]<<"\n\n";
 
+
                 //Producto 8
                 cout<<"Presione (8) para elegir "<<nombrefarmacos[7]<<"\n"
                     <<"Precio: Q"<<preciofarmacos[7]<<"\n"
