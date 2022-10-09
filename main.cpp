@@ -372,6 +372,7 @@ int main() {
                 modulo3();
                 break;
             }
+
             default: {
                 cout << "Error ingrese un numero valido\n\n";
                 break;
