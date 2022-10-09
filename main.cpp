@@ -47,7 +47,75 @@ int seguro=0;
 int descuentoseguro;
 int lola=0;
 string nombre[200];
-string usuario, contrasena;
+
+//Modulo 4
+//Contador
+int contador=0;
+//Nombre de usuario
+string usuario[200];
+//Nombre de la persona
+string name[200];
+//Apellido de la Persona
+string lastName[200];
+//Rol del Usuario
+int rol[200];
+//Contraseña del Usuario
+string password[200];
+//El usuario esta bloqueado?
+bool bloqueado[200];
+
+//Main
+
+//Declaracion de las funciones
+
+void modulo1();
+
+void modulo2();
+
+void modulo3();
+
+void modulo4();
+
+
+int main() {
+    //Roles
+    //Cliente
+    int cliente=0;
+    //Dependiente
+    int dependiente=0;
+
+    int contador2=0;
+    //Este es el usuario que ellos ingresan
+    string nombreUsuario;
+    //Esta es la contraseña que ellos ingresan
+    string contraIngresada;
+    do{
+        //Ingresan el usuario
+        cout<<"Usuario"<<endl;
+        cin>>nombreUsuario;
+        //Ingresan la contraseña
+        cout<<"Contraseña"<<endl;
+        cin>>contraIngresada;
+        if (nombreUsuario=="ADMIN"&&contraIngresada=="admin"){
+
+        }
+        while (contador2<contador&&cliente==0&&dependiente==0){
+            if (nombreUsuario==name[contador2]&&contraIngresada==password[contador2]&&rol[contador2]==0){
+                cliente=1;
+            }
+            else if (nombreUsuario==name[contador2]&&contraIngresada==password[contador2]&&rol[contador2]==1){
+                dependiente=1;
+            }
+            contador2++;
+        }
+        if (cliente==1){
+
+        }
+    }
+    while (cliente!=1||dependiente!=1);
+
+    return 0;
+}
 
 void modulo1(){
     int modulo1;
@@ -176,7 +244,7 @@ void modulo1(){
         cout<<"¿Usted cuenta con alguno de los siguientes seguro?\n"
             <<"Presione 1 para si y 0 para no\n";
         cin>>descuentoseguro;
-        //AQUI SEÑORES
+
         if (descuentoseguro==1)
         {
             int dess;
@@ -238,6 +306,7 @@ void modulo1(){
             <<"PAGO EXITOSO\n\n";
     }
 }
+
 void modulo2(){
 
     //Inicia el Modulo 2
@@ -339,48 +408,56 @@ void modulo3(){
             cout << "insertar el seguro \n";
     }
 }
-int main() {
 
+void modulo4(){
 
-
-    cout << "Ingrese el usuario: ";
-    cin >> usuario;
-    cout << "Ingrese la contraseña: ";
-    cin >> contrasena;
-    if (usuario == "Admin" && contrasena == "Contra");
-        else {
-            cout << "Usuario incorrecto";
-        }
+    int accion;
 
     do {
-        cout << "Para modulo de farmacia presione 1\n";
-        cout << "Para modulo de seguros presione 2\n";
-        cout << "Para modulo de reportes presione 3\n";
-        cout << "Ingrese el numero 4 para finalizar el proceso\n";
-        cout<<"Escriba aqui el modulo al que quiere acceder\n";
-        cin >> modulos;
-        switch (modulos) {
-            case 1: {
-                modulo1();
-                break;
-            }
-            case 2: {
-                modulo2();
-                break;
-            }
-            case 3: {
-                modulo3();
-                break;
-            }
+        //Seleccion de accion del Administrador
+        cout <<"¿Que desea hacer?"
+             <<"1=Control de Accesos"
+             <<"2=Modificacion de la Info de farmacia"
+             <<"0=salir del modulo"
+             <<endl;
+        cin>>accion;
 
-            default: {
-                cout << "Error ingrese un numero valido\n\n";
-                break;
-            }
+        //Creacion de usuarios
+        if (accion==1){
+            //Usuario
+            cout<<"Ingrese el usuario"<<endl;
+            cin>>usuario[contador];
+            //Nombre
+            cout<<"Ingrese el nombre de la persona"<<endl;
+            cin>>name[contador];
+            //Apellido
+            cout<<"Ingrese el apellido de la persona"<<endl;
+            cin>>lastName[contador];
+            //Rol
+            cout<<"Ingrese el rol de la persona 0=cliente 1=Dependiente"<<endl;
+            cin>>rol[contador];
+            //Contraseña
+            cout<<"Ingrese la contraseña del usuario"<<endl;
+            cin>>password[contador];
+            //Estado (Bloquedo o no Bloqueado)
+            cout<<"¿Está bloqueado el usuario 1=si, 0=no?"<<endl;
+            cin>>bloqueado[contador];
+        }
+        //Estado de Farmacos
+        else if(accion==2){
+
+        }
+        //Caso 0
+        else if(accion==0){
+
+        }
+        //Mesaje de Error
+        else {
+            cout<<"Error entrada no válida"<<endl;
         }
     }
-    while (modulos != 4);
+    while (accion!=0);
 
-    return 0;
 }
+
 
