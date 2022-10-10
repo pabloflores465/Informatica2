@@ -599,13 +599,15 @@ void modulo4(){
         }
             //Estado de Farmacos
         else if(accion==2){
+            int switchcase;
             cout<<"Ingrese el articulo al cual le quiere modificar las existencias \n";
+            cin>>switchcase;
             int numero=1;
             for (int i=0;i<10;i++)
             {
                 cout<<"Presione ("<<numero++<<") para elegir "<<nombrefarmacos[i]<<"\n";
             }
-            int switchcase;
+
             switch (switchcase) {
                 case 1: {
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[1];
