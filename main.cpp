@@ -139,7 +139,7 @@ int main() {
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
             contadorGeneral=0;
-            while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&rol[contadorGeneral]!=0&&bloqueado[contadorGeneral]!=0){
+            while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&bloqueado[contadorGeneral]!=1){
                 contadorGeneral++;
             }
 
