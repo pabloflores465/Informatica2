@@ -178,6 +178,7 @@ int main() {
                     bloqueado[contadorGeneral]=1;
                     cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
                     system("color 46");
+
                 }
 
             }
