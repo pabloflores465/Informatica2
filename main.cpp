@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
 using namespace std;
 
@@ -86,8 +85,7 @@ int main() {
     int rolIngresado=0;
     //Este es un contador general
     int contadorGeneral=0;
-    //Este es el contador que verifica el rol del cliente
-    int contadorRoles=0;
+
     //Numero de intentos fallidos
     int numeroFallas=0;
     //Se usa para verificar que sea un cliente
@@ -146,15 +144,12 @@ int main() {
             if (contadorGeneral<200&&nombreCliente==usuario[contadorGeneral]&&rol[contadorGeneral]==0&&bloqueado[contadorGeneral]==0) {
                 //Ingresan la contraseña
 
-                if (bloqueado[contadorRoles]!=1) {
+                if (bloqueado[contadorGeneral]!=1) {
                     cout << "Contraseña" << endl;
                     cin >> contraCliente;
                 }
-                contadorRoles = 0;
-                while (contadorRoles<200&&contraCliente!= password[contadorRoles]) {
-                    contadorRoles++;
-                }
-                if (contraCliente == password[contadorRoles]) {
+
+                if (contraCliente == password[contadorGeneral]) {
                     cout << "¿A que modulo quieres ingresar?\n"
                          << "1=Farmacias\n"
                          << "2=Seguros\n"
@@ -180,9 +175,10 @@ int main() {
                     intentos++;
                 }
                 if(intentos>3){
-                    bloqueado[contadorRoles]=1;
+                    bloqueado[contadorGeneral]=1;
                     cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
                 }
+                system("color 46");
             }
 
         }
@@ -195,12 +191,12 @@ int main() {
             cout<<"Contraseña"<<endl;
             cin>>contraDep;
 
-            contadorRoles=0;
-            while (contadorRoles<200){
-                if (nombreDep==usuario[contadorRoles]&&contraDep==password[contadorRoles]&&rol[contadorRoles]==1){
+            contadorGeneral=0;
+            while (contadorGeneral<200){
+                if (nombreDep==usuario[contadorGeneral]&&contraDep==password[contadorGeneral]&&rol[contadorGeneral]==1){
                     dependiente=1;
                 }
-                contadorRoles++;
+                contadorGeneral++;
             }
             if (dependiente==1){
                 cout<<"¿A que modulo quieres ingresar?\n"
@@ -238,12 +234,12 @@ int main() {
             //Ingresan la contraseña
             cout<<"Contraseña"<<endl;
             cin>>contraADMIN;
-            contadorRoles=0;
-            while (contadorRoles<200){
+            contadorGeneral=0;
+            while (contadorGeneral<200){
                 if (nombreADMIN=="ADMIN"&&contraADMIN=="admin"){
                     administrador=1;
                 }
-                contadorRoles++;
+                contadorGeneral++;
             }
             if (administrador==1){
                 cout<<"¿A que modulo quieres ingresar?\n"
