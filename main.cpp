@@ -86,6 +86,10 @@ int main() {
     int numeroFallas=0;
     //Se usa para verificar que sea un cliente
     int cliente;
+    //Se usa para verificar que sea
+    int dependiente;
+    //Se usa para verificar que sea un cliente
+    int administrador;
     //Este es el usuario del Administrador
     string nombreADMIN;
     //Esta es la contraseña del Administrador
@@ -165,17 +169,19 @@ int main() {
             cin>>nombreDep;
             //Ingresan la contraseña
             cout<<"Contraseña"<<endl;
-            cin>>contraCliente;
+            cin>>contraDep;
+            contadorRoles=0;
             while (contadorRoles<200){
                 if (nombreDep==name[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
-                    cliente=1;
+                    dependiente=1;
                 }
                 contadorRoles++;
             }
-            if (cliente==1){
+            if (dependiente==1){
                 cout<<"¿A que modulo quieres ingresar?\n"
                     <<"1=Farmacias\n"
                     <<"2=Seguros\n"
+                    <<"3=Reportes\n"
                     <<"Finalizar Ejecicion\n"
                     <<endl;
                 cin>>modulo;
@@ -186,6 +192,57 @@ int main() {
                     }
                     case 2:{
                         modulo2();
+                        break;
+                    }
+                    case 3:{
+                        modulo3();
+                    }
+                    default:{
+                        cout<<"Error valor no valido"<<endl;
+                    }
+                }
+            }
+            else {
+                numeroFallas++;
+            }
+        }
+        if (rolIngresado==2){
+            //Ingresan el usuario
+            cout<<"Usuario"<<endl;
+            cin>>nombreADMIN;
+            //Ingresan la contraseña
+            cout<<"Contraseña"<<endl;
+            cin>>contraADMIN;
+            contadorRoles=0;
+            while (contadorRoles<200){
+                if (nombreADMIN=="ADMIN"&&contraADMIN=="admin"){
+                    administrador=1;
+                }
+                contadorRoles++;
+            }
+            if (administrador==1){
+                cout<<"¿A que modulo quieres ingresar?\n"
+                    <<"1=Farmacias\n"
+                    <<"2=Seguros\n"
+                    <<"3=Reportes\n"
+                    <<"4=Administrar\n"
+                    <<"Finalizar Ejecicion\n"
+                    <<endl;
+                cin>>modulo;
+                switch (modulo) {
+                    case 1:{
+                        modulo1();
+                        break;
+                    }
+                    case 2:{
+                        modulo2();
+                        break;
+                    }
+                    case 3:{
+                        modulo3();
+                    }
+                    case 4:{
+                        modulo4();
                         break;
                     }
                     default:{
