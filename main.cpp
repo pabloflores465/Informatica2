@@ -313,7 +313,8 @@ void modulo1(){
 
     }
 
-
+    ii=0;
+    float sumacl=0.0;
     do{
         cout<<"Escriba aqui el numero del medicamento que quiere elegir";
         if (i!=0)
@@ -336,6 +337,7 @@ void modulo1(){
             case 1:
             {
                 suma=suma+preciofarmacos[0];
+                sumacl=sumacl+preciofarmacos[0];
                 existenciasfarmacos [0]--;
                 ii++;
                 break;
@@ -344,6 +346,7 @@ void modulo1(){
             case 2:
             {
                 suma=suma+preciofarmacos[1];
+                sumacl=sumacl+preciofarmacos[1];
                 existenciasfarmacos [1]--;
                 ii++;
                 break;
@@ -351,6 +354,7 @@ void modulo1(){
             case 3:
             {
                 suma=suma+preciofarmacos[2];
+                sumacl=sumacl+preciofarmacos[2];
                 existenciasfarmacos [2]--;
                 ii++;
                 break;
@@ -358,6 +362,7 @@ void modulo1(){
             case 4:
             {
                 suma=suma+preciofarmacos[3];
+                sumacl=sumacl+preciofarmacos[3];
                 existenciasfarmacos [3]--;
                 ii++;
                 break;
@@ -365,6 +370,7 @@ void modulo1(){
             case 5:
             {
                 suma=suma+preciofarmacos[4];
+                sumacl=sumacl+preciofarmacos[4];
                 existenciasfarmacos [4]--;
                 ii++;
                 break;
@@ -372,6 +378,7 @@ void modulo1(){
             case 6:
             {
                 suma=suma+preciofarmacos[5];
+                sumacl=sumacl+preciofarmacos[5];
                 existenciasfarmacos [5]--;
                 ii++;
                 break;
@@ -379,6 +386,7 @@ void modulo1(){
             case 7:
             {
                 suma=suma+preciofarmacos[6];
+                sumacl=sumacl+preciofarmacos[6];
                 existenciasfarmacos [6]--;
                 ii++;
                 break;
@@ -386,6 +394,7 @@ void modulo1(){
             case 8:
             {
                 suma=suma+preciofarmacos[7];
+                sumacl=sumacl+preciofarmacos[7];
                 existenciasfarmacos [7]--;
                 ii++;
                 break;
@@ -393,6 +402,7 @@ void modulo1(){
             case 9:
             {
                 suma=suma+preciofarmacos[8];
+                sumacl=sumacl+preciofarmacos[8];
                 existenciasfarmacos [8]--;
                 ii++;
                 break;
@@ -400,6 +410,7 @@ void modulo1(){
             case 10:
             {
                 suma=suma+preciofarmacos[9];
+                sumacl=sumacl+preciofarmacos[9];
                 existenciasfarmacos [9]--;
                 ii++;
                 break;
@@ -408,7 +419,7 @@ void modulo1(){
     }
     while(modulo1!=0);
     cout<<"\n";
-    cout<<"El total a pagar es de "<<"Q"<<suma<<"\n"
+    cout<<"El total a pagar es de "<<"Q"<<sumacl<<"\n"
         <<"El total de productos que usted comprara es de "<<ii<<"\n\n";
 
     if(ii!=0) {
@@ -433,27 +444,27 @@ void modulo1(){
             {
                 case 1:
                 {
-                    descuentoaplicado=suma*0.75;
+                    descuentoaplicado=sumacl*0.75;
                     break;
                 }
                 case 2:
                 {
-                    descuentoaplicado=suma*0.40;
+                    descuentoaplicado=sumacl*0.40;
                     break;
                 }
                 case 3:
                 {
-                    descuentoaplicado=suma*0.60;
+                    descuentoaplicado=sumacl*0.60;
                     break;
                 }
                 case 4:
                 {
-                    descuentoaplicado=suma*0.5;
+                    descuentoaplicado=sumacl*0.5;
                     break;
                 }
                 case 5:
                 {
-                    descuentoaplicado=suma*0.25;
+                    descuentoaplicado=sumacl*0.25;
                     break;
                 }
             }
