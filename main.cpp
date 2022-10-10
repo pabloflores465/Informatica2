@@ -172,6 +172,7 @@ int main() {
             //Ingresan el usuario
             cout<<"Usuario"<<endl;
             cin>>nombreDep;
+
             //Ingresan la contraseña
             cout<<"Contraseña"<<endl;
             cin>>contraDep;
