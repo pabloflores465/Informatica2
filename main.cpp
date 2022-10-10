@@ -137,7 +137,7 @@ int main() {
             cout<<"Contraseña"<<endl;
             cin>>contraCliente;
             while (contadorRoles<200){
-                if (nombreCliente==name[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
+                if (nombreCliente==usuario[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
                     cliente=1;
                 }
                 contadorRoles++;
@@ -175,9 +175,12 @@ int main() {
             //Ingresan la contraseña
             cout<<"Contraseña"<<endl;
             cin>>contraDep;
+            cout<<name[0];
+            cout<<password[0];
+            cout<<rol[0];
             contadorRoles=0;
             while (contadorRoles<200){
-                if (nombreDep==name[contadorRoles]&&contraDep==password[contadorRoles]&&rol[contadorRoles]==1){
+                if (nombreDep==usuario[contadorRoles]&&contraDep==password[contadorRoles]&&rol[contadorRoles]==1){
                     dependiente=1;
                 }
                 contadorRoles++;
