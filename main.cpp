@@ -598,6 +598,7 @@ void modulo4(){
         cout <<"¿Que desea hacer?\n"
              <<"1=Control de Accesos\n"
              <<"2=Modificacion de la Info de farmacia\n"
+             <<"3=Bloquear o desbloquear usuarios"
              <<"0=salir del modulo\n"
              <<endl;
         cin>>accion;
@@ -716,6 +717,21 @@ void modulo4(){
                 }
 
             } while (switchcase != 0);
+        }
+        //Modulo para desbloquear usuarios
+        else if(accion==3){
+            int b=0;
+            cout<<"Los usuarios bloquedos son: "<<endl;
+            for(int a=0;a<200;a++){
+                if (bloqueado[a]==1){
+                    cout<<usuario[a]<<"\t Está en la posición: "<<a<<endl;
+                }
+
+            }
+            cout<<"Pulse la posición en la que se quiere desbloquear"<<endl;
+            cin>>b;
+            cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
+            cin>>bloqueado[b];
         }
             //Caso 0
         else if(accion==0){
