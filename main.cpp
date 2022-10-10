@@ -68,12 +68,16 @@ bool bloqueado[200];
 
 //Declaracion de las funciones
 
+//Modulo1
 void modulo1();
 
+//Modulo2
 void modulo2();
 
+//Modulo3
 void modulo3();
 
+//Modulo4
 void modulo4();
 
 
