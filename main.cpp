@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -82,7 +83,7 @@ void modulo4();
 
 int main() {
     //Este es el rol que el usuario ingresa
-    int rolIngresado;
+    int rolIngresado=0;
     //Este es el contador que verifica el rol del cliente
     int contadorRoles=0;
     //Numero de intentos fallidos
@@ -163,10 +164,11 @@ int main() {
                 }
             }
             else {
-                numeroFallas++;
+                cout<<"Contraseña incorrecta"<<endl;
+                system("color 1A");
             }
         }
-        if (rolIngresado==2){
+        else if (rolIngresado==2){
             //Ingresan el usuario
             cout<<"Usuario"<<endl;
             cin>>nombreDep;
@@ -175,7 +177,7 @@ int main() {
             cin>>contraDep;
             contadorRoles=0;
             while (contadorRoles<200){
-                if (nombreDep==name[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
+                if (nombreDep==name[contadorRoles]&&contraDep==password[contadorRoles]&&rol[contadorRoles]==1){
                     dependiente=1;
                 }
                 contadorRoles++;
@@ -209,7 +211,7 @@ int main() {
                 numeroFallas++;
             }
         }
-        if (rolIngresado==2){
+        else if (rolIngresado==3){
             //Ingresan el usuario
             cout<<"Usuario"<<endl;
             cin>>nombreADMIN;
