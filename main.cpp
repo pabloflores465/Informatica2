@@ -615,6 +615,7 @@ void modulo4(){
             cout<<"¿Está bloqueado el usuario 1=si, 0=no?"<<endl;
             cin>>bloqueado[contador];
         }
+
             //Estado de Farmacos
         else if(accion==2) {
             int numero = 1;
