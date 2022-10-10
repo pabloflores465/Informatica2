@@ -81,7 +81,7 @@ int main() {
     //Este es el rol que el usuario ingresa
     int rolIngresado;
     //Este es el contador que verifica el rol del cliente
-    int contadorCliente=0;
+    int contadorRoles=0;
     //Numero de intentos fallidos
     int numeroFallas=0;
     //Se usa para verificar que sea un cliente
@@ -128,11 +128,11 @@ int main() {
             //Ingresan la contraseña
             cout<<"Contraseña"<<endl;
             cin>>contraCliente;
-            while (contadorCliente<200){
-                if (nombreCliente==name[contadorCliente]&&contraCliente==password[contadorCliente]&&rol[contadorCliente]==0){
+            while (contadorRoles<200){
+                if (nombreCliente==name[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
                     cliente=1;
                 }
-                contadorCliente++;
+                contadorRoles++;
             }
             if (cliente==1){
                 cout<<"¿A que modulo quieres ingresar?\n"
@@ -159,7 +159,44 @@ int main() {
                 numeroFallas++;
             }
         }
-
+        if (rolIngresado==2){
+            //Ingresan el usuario
+            cout<<"Usuario"<<endl;
+            cin>>nombreDep;
+            //Ingresan la contraseña
+            cout<<"Contraseña"<<endl;
+            cin>>contraCliente;
+            while (contadorRoles<200){
+                if (nombreDep==name[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
+                    cliente=1;
+                }
+                contadorRoles++;
+            }
+            if (cliente==1){
+                cout<<"¿A que modulo quieres ingresar?\n"
+                    <<"1=Farmacias\n"
+                    <<"2=Seguros\n"
+                    <<"Finalizar Ejecicion\n"
+                    <<endl;
+                cin>>modulo;
+                switch (modulo) {
+                    case 1:{
+                        modulo1();
+                        break;
+                    }
+                    case 2:{
+                        modulo2();
+                        break;
+                    }
+                    default:{
+                        cout<<"Error valor no valido"<<endl;
+                    }
+                }
+            }
+            else {
+                numeroFallas++;
+            }
+        }
 
 
     }
