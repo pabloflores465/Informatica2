@@ -598,96 +598,93 @@ void modulo4(){
             cin>>bloqueado[contador];
         }
             //Estado de Farmacos
-        else if(accion==2){
-            int numero=1;
+        else if(accion==2) {
             int switchcase;
-            for (int i=0;i<10;i++)
-            {
-                cout<<"Presione ("<<numero++<<") para elegir "<<nombrefarmacos[i]<<"\n";
-            }
-            cout<<"Ingrese el articulo al cual le quiere modificar las existencias \n";
-            cin>>switchcase;
-            switch (switchcase) {
-                case 1: {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[1];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[1];
-                    break;
-                }
-                case 2:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[2];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[2];
-                    break;
+            do {
+                int numero = 1;
 
+                for (int i = 0; i < 10; i++) {
+                    cout << "Presione (" << numero++ << ") para elegir " << nombrefarmacos[i] << "\n";
                 }
-                case 3:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[3];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[3];
-                    break;
+                cout << "Ingrese el articulo al cual le quiere modificar las existencias \n";
+                cin >> switchcase;
+                switch (switchcase) {
+                    case 0:
+                    {
+                        cout<<"Cambios realizados\n";
+                    }
+                    case 1: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[0];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[0];
+                        break;
+                    }
+                    case 2: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[1];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[1];
+                        break;
 
+                    }
+                    case 3: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[2];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[2];
+                        break;
+
+                    }
+                    case 4: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[3];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[3];
+                        break;
+
+                    }
+                    case 5: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[4];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[4];
+                        break;
+
+                    }
+                    case 6: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[5];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[5];
+                        break;
+
+                    }
+                    case 7: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[6];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[6];
+                        break;
+
+                    }
+                    case 8: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[7];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[7];
+                        break;
+
+                    }
+                    case 9: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[8];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[8];
+                        break;
+
+                    }
+                    case 10: {
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[9];
+                        cout << "Ingrese el nuevo valor de la existencia\n";
+                        cin >> existenciasfarmacos[9];
+                        break;
+
+                    }
                 }
-                case 4:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[4];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[4];
-                    break;
 
-                }
-                case 5:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[5];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[5];
-                    break;
-
-                }
-                case 6:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[6];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[6];
-                    break;
-
-                }
-                case 7:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[7];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[7];
-                    break;
-
-                }
-                case 8:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[8];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[8];
-                    break;
-
-                }
-                case 9:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[9];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[9];
-                    break;
-
-                }
-                case 10:
-                {
-                    cout << "La existencia del farmaco es de " << existenciasfarmacos[10];
-                    cout << "Ingrese el nuevo valor de la existencia\n";
-                    cin >> existenciasfarmacos[10];
-                    break;
-
-                }
-            }
-
+            } while (switchcase != 0);
         }
             //Caso 0
         else if(accion==0){
