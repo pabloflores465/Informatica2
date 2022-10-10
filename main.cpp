@@ -145,6 +145,7 @@ int main() {
 
             if (contadorGeneral<200&&nombreCliente==usuario[contadorGeneral]&&rol[contadorGeneral]==0&&bloqueado[contadorGeneral]==0) {
                 //Ingresan la contraseña
+
                 if (bloqueado[contadorRoles]!=1) {
                     cout << "Contraseña" << endl;
                     cin >> contraCliente;
