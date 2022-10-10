@@ -597,6 +597,7 @@ void modulo4(){
         else if(accion==2){
 
         }
+
             //Caso 0
         else if(accion==0){
 
