@@ -295,6 +295,7 @@ void modulo1(){
 
     }
 
+
     do{
         cout<<"Escriba aqui el numero del medicamento que quiere elegir";
         if (i!=0)
@@ -598,6 +599,83 @@ void modulo4(){
         }
             //Estado de Farmacos
         else if(accion==2){
+            cout<<"Ingrese el articulo al cual le quiere modificar las existencias \n";
+            int numero=1;
+            for (int i=0;i<10;i++)
+            {
+                cout<<"Presione ("<<numero++<<") para elegir "<<nombrefarmacos[i]<<"\n";
+            }
+            int switchcase;
+            switch (switchcase) {
+                case 1: {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[1];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[1];
+                }
+                case 2:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[2];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[2];
+
+                }
+                case 3:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[3];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[3];
+
+                }
+                case 4:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[4];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[4];
+
+                }
+                case 5:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[5];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[5];
+
+                }
+                case 6:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[6];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[6];
+
+                }
+                case 7:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[7];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[7];
+
+                }
+                case 8:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[8];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[8];
+
+                }
+                case 9:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[9];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[9];
+
+                }
+                case 10:
+                {
+                    cout << "La existencia del farmaco es de " << existenciasfarmacos[10];
+                    cout << "Ingrese el nuevo valor de la existencia\n";
+                    cin >> existenciasfarmacos[10];
+
+                }
+            }
 
         }
 
