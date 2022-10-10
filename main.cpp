@@ -598,7 +598,7 @@ void modulo4(){
         cout <<"¿Que desea hacer?\n"
              <<"1=Control de Accesos\n"
              <<"2=Modificacion de la Info de farmacia\n"
-             <<"3=Bloquear o desbloquear usuarios"
+             <<"3=Bloquear o desbloquear usuarios\n"
              <<"0=salir del modulo\n"
              <<endl;
         cin>>accion;
