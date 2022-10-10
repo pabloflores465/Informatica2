@@ -415,6 +415,7 @@ void modulo1(){
             <<"Presione 1 para si y 0 para no\n";
         cin>>descuentoseguro;
 
+
         if (descuentoseguro==1)
         {
             int dess;
