@@ -62,7 +62,7 @@ int rol[200];
 //Contraseña del Usuario
 string password[200];
 //El usuario esta bloqueado?
-bool bloqueado[200];
+int bloqueado[200];
 
 //Main
 
@@ -84,6 +84,8 @@ void modulo4();
 int main() {
     //Este es el rol que el usuario ingresa
     int rolIngresado=0;
+    //Este es un contador general
+    int contadorGeneral=0;
     //Este es el contador que verifica el rol del cliente
     int contadorRoles=0;
     //Numero de intentos fallidos
@@ -94,6 +96,8 @@ int main() {
     int dependiente;
     //Se usa para verificar que sea un cliente
     int administrador;
+    //No. de Intentos restantes
+    int intentos=0;
     //Este es el usuario del Administrador
     string nombreADMIN;
     //Esta es la contraseña del Administrador
@@ -106,6 +110,7 @@ int main() {
     string nombreDep;
     //Esta es la contraseña del Cliente
     string contraDep;
+
     do{
         //Ingresan el usuario
         cout<<"Usuario"<<endl;
@@ -130,43 +135,55 @@ int main() {
             <<"3=Otro\n";
         cin>>rolIngresado;
         if (rolIngresado==1){
-            //Ingresan el usuario
+
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
-            //Ingresan la contraseña
-            cout<<"Contraseña"<<endl;
-            cin>>contraCliente;
-            while (contadorRoles<200){
-                if (nombreCliente==usuario[contadorRoles]&&contraCliente==password[contadorRoles]&&rol[contadorRoles]==0){
-                    cliente=1;
+            contadorGeneral=0;
+            while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&rol[contadorGeneral]!=0&&bloqueado[contadorGeneral]!=0){
+                contadorGeneral++;
+            }
+
+            if (contadorGeneral<200&&nombreCliente==usuario[contadorGeneral]&&rol[contadorGeneral]==0&&bloqueado[contadorGeneral]==0) {
+                //Ingresan la contraseña
+                if (bloqueado[contadorRoles]!=1) {
+                    cout << "Contraseña" << endl;
+                    cin >> contraCliente;
                 }
-                contadorRoles++;
-            }
-            if (cliente==1){
-                cout<<"¿A que modulo quieres ingresar?\n"
-                    <<"1=Farmacias\n"
-                    <<"2=Seguros\n"
-                    <<"Finalizar Ejecicion\n"
-                    <<endl;
-                cin>>modulo;
-                switch (modulo) {
-                    case 1:{
-                        modulo1();
-                        break;
-                    }
-                    case 2:{
-                        modulo2();
-                        break;
-                    }
-                    default:{
-                        cout<<"Error valor no valido"<<endl;
+                contadorRoles = 0;
+                while (contadorRoles<200&&contraCliente!= password[contadorRoles]) {
+                    contadorRoles++;
+                }
+                if (contraCliente == password[contadorRoles]) {
+                    cout << "¿A que modulo quieres ingresar?\n"
+                         << "1=Farmacias\n"
+                         << "2=Seguros\n"
+                         << "Finalizar Ejecicion\n"
+                         << endl;
+                    cin >> modulo;
+                    switch (modulo) {
+                        case 1: {
+                            modulo1();
+                            break;
+                        }
+                        case 2: {
+                            modulo2();
+                            break;
+                        }
+                        default: {
+                            cout << "Error valor no valido" << endl;
+                        }
                     }
                 }
+                else {
+                    cout<<"Contraseña incorrecta"<<endl;
+                    intentos++;
+                }
+                if(intentos>3){
+                    bloqueado[contadorRoles]=1;
+                    cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
+                }
             }
-            else {
-                cout<<"Contraseña incorrecta"<<endl;
-                system("color 1A");
-            }
+
         }
         else if (rolIngresado==2){
             //Ingresan el usuario
