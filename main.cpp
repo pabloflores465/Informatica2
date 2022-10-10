@@ -5,7 +5,7 @@
 using namespace std;
 
 //NO TOCAR Seleccion de los modulos
-int modulos;
+int modulo;
 
 //Arrelos para la descripcion de los farmacos
 //Modulo 1
@@ -78,41 +78,92 @@ void modulo4();
 
 
 int main() {
-    //Roles
-    //Cliente
-    int cliente=0;
-    //Dependiente
-    int dependiente=0;
-
-    int contador2=0;
-    //Este es el usuario que ellos ingresan
-    string nombreUsuario;
-    //Esta es la contraseña que ellos ingresan
-    string contraIngresada;
+    //Este es el rol que el usuario ingresa
+    int rolIngresado;
+    //Este es el contador que verifica el rol del cliente
+    int contadorCliente=0;
+    //Numero de intentos fallidos
+    int numeroFallas=0;
+    //Se usa para verificar que sea un cliente
+    int cliente;
+    //Este es el usuario del Administrador
+    string nombreADMIN;
+    //Esta es la contraseña del Administrador
+    string contraADMIN;
+    //Este es el usuario del Cliente
+    string nombreCliente;
+    //Esta es la contraseña del Cliente
+    string contraCliente;
+    //Este es el usuario del Dependiente
+    string nombreDep;
+    //Esta es la contraseña del Cliente
+    string contraDep;
     do{
         //Ingresan el usuario
         cout<<"Usuario"<<endl;
-        cin>>nombreUsuario;
+        cin>>nombreADMIN;
         //Ingresan la contraseña
         cout<<"Contraseña"<<endl;
-        cin>>contraIngresada;
-        if (nombreUsuario=="ADMIN"&&contraIngresada=="admin"){
-
+        cin>>contraADMIN;
+        if (nombreADMIN=="ADMIN"&&contraADMIN=="admin"){
+            modulo4();
         }
-        while (contador2<contador&&cliente==0&&dependiente==0){
-            if (nombreUsuario==name[contador2]&&contraIngresada==password[contador2]&&rol[contador2]==0){
-                cliente=1;
-            }
-            else if (nombreUsuario==name[contador2]&&contraIngresada==password[contador2]&&rol[contador2]==1){
-                dependiente=1;
-            }
-            contador2++;
-        }
-        if (cliente==1){
-
+        else {
+            cout<<"ERROR: Usuario o Contraseña de administrador incorrectos"<<endl;
         }
     }
-    while (cliente!=1||dependiente!=1);
+    while (nombreADMIN!="ADMIN"&&contraADMIN!="admin");
+
+
+    do{
+        cout<<"¿Quien es usted?\n"
+            <<"1=Cliente\n"
+            <<"2=Empleado\n"
+            <<"3=Otro\n";
+        cin>>rolIngresado;
+        if (rolIngresado==1){
+            //Ingresan el usuario
+            cout<<"Usuario"<<endl;
+            cin>>nombreCliente;
+            //Ingresan la contraseña
+            cout<<"Contraseña"<<endl;
+            cin>>contraCliente;
+            while (contadorCliente<200){
+                if (nombreCliente==name[contadorCliente]&&contraCliente==password[contadorCliente]&&rol[contadorCliente]==0){
+                    cliente=1;
+                }
+                contadorCliente++;
+            }
+            if (cliente==1){
+                cout<<"¿A que modulo quieres ingresar?\n"
+                    <<"1=Farmacias\n"
+                    <<"2=Seguros\n"
+                    <<"Finalizar Ejecicion\n"
+                    <<endl;
+                cin>>modulo;
+                switch (modulo) {
+                    case 1:{
+                        modulo1();
+                        break;
+                    }
+                    case 2:{
+                        modulo2();
+                        break;
+                    }
+                    default:{
+                        cout<<"Error valor no valido"<<endl;
+                    }
+                }
+            }
+            else {
+                numeroFallas++;
+            }
+        }
+
+
+
+    }
+    while(rolIngresado!=0);
 
     return 0;
 }
@@ -415,10 +466,10 @@ void modulo4(){
 
     do {
         //Seleccion de accion del Administrador
-        cout <<"¿Que desea hacer?"
-             <<"1=Control de Accesos"
-             <<"2=Modificacion de la Info de farmacia"
-             <<"0=salir del modulo"
+        cout <<"¿Que desea hacer?\n"
+             <<"1=Control de Accesos\n"
+             <<"2=Modificacion de la Info de farmacia\n"
+             <<"0=salir del modulo\n"
              <<endl;
         cin>>accion;
 
