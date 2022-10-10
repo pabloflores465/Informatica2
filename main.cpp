@@ -177,8 +177,9 @@ int main() {
                 if(intentos>3){
                     bloqueado[contadorGeneral]=1;
                     cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
+                    system("color 46");
                 }
-                system("color 46");
+
             }
 
         }
@@ -465,6 +466,7 @@ void modulo1(){
                 }
             }
             cout<<"El nuevo total a pagar con el descuento aplicado es de "<<descuentoaplicado<<"\n";
+            descuentoaplicado=0;
         }
         else {
             cout<<"usted no cuenta con un seguro\n";
@@ -575,8 +577,6 @@ void modulo3(){
             for (int i = 0; i < lola ; ++i) {
                 cout<<nombre[i]<<endl;
             }
-            cout << "Total de ventas: \n";
-            cout << suma << "\n";
             break;
         case 2:
             cout << "Informacion de las aseguradoras \n ";
@@ -598,7 +598,8 @@ void modulo4(){
         cout <<"¿Que desea hacer?\n"
              <<"1=Control de Accesos\n"
              <<"2=Modificacion de la Info de farmacia\n"
-             <<"3=Bloquear o desbloquear usuarios"
+             <<"3=Bloquear o desbloquear usuarios\n"
+             <<"4=Ver las ventas totales\n"
              <<"0=salir del modulo\n"
              <<endl;
         cin>>accion;
@@ -732,6 +733,10 @@ void modulo4(){
             cin>>b;
             cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
             cin>>bloqueado[b];
+        }
+        else if (accion==4){
+            cout << "El total de ventas es: \n";
+            cout << suma << "\n";
         }
             //Caso 0
         else if(accion==0){
