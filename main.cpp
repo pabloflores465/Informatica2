@@ -599,26 +599,27 @@ void modulo4(){
         }
             //Estado de Farmacos
         else if(accion==2){
-            int switchcase;
-            cout<<"Ingrese el articulo al cual le quiere modificar las existencias \n";
-            cin>>switchcase;
             int numero=1;
+            int switchcase;
             for (int i=0;i<10;i++)
             {
                 cout<<"Presione ("<<numero++<<") para elegir "<<nombrefarmacos[i]<<"\n";
             }
-
+            cout<<"Ingrese el articulo al cual le quiere modificar las existencias \n";
+            cin>>switchcase;
             switch (switchcase) {
                 case 1: {
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[1];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[1];
+                    break;
                 }
                 case 2:
                 {
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[2];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[2];
+                    break;
 
                 }
                 case 3:
@@ -626,6 +627,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[3];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[3];
+                    break;
 
                 }
                 case 4:
@@ -633,6 +635,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[4];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[4];
+                    break;
 
                 }
                 case 5:
@@ -640,6 +643,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[5];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[5];
+                    break;
 
                 }
                 case 6:
@@ -647,6 +651,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[6];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[6];
+                    break;
 
                 }
                 case 7:
@@ -654,6 +659,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[7];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[7];
+                    break;
 
                 }
                 case 8:
@@ -661,6 +667,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[8];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[8];
+                    break;
 
                 }
                 case 9:
@@ -668,6 +675,7 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[9];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[9];
+                    break;
 
                 }
                 case 10:
@@ -675,12 +683,12 @@ void modulo4(){
                     cout << "La existencia del farmaco es de " << existenciasfarmacos[10];
                     cout << "Ingrese el nuevo valor de la existencia\n";
                     cin >> existenciasfarmacos[10];
+                    break;
 
                 }
             }
 
         }
-
             //Caso 0
         else if(accion==0){
 
