@@ -139,7 +139,7 @@ int main() {
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
             contadorGeneral=0;
-            while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&rol[contadorGeneral]!=0&&bloqueado[contadorGeneral]!=0){
+            while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&bloqueado[contadorGeneral]!=1){
                 contadorGeneral++;
             }
 
@@ -614,6 +614,7 @@ void modulo4(){
             //Estado (Bloquedo o no Bloqueado)
             cout<<"¿Está bloqueado el usuario 1=si, 0=no?"<<endl;
             cin>>bloqueado[contador];
+            contador++;
         }
 
             //Estado de Farmacos
