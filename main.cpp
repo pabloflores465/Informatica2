@@ -599,14 +599,17 @@ void modulo4(){
         }
             //Estado de Farmacos
         else if(accion==2) {
+            int numero = 1;
+            for (int i = 0; i < 10; i++) {
+                cout << "Presione (" << numero++ << ") para elegir " << nombrefarmacos[i] << "\n";
+            }
             int switchcase;
             do {
-                int numero = 1;
 
                 for (int i = 0; i < 10; i++) {
                     cout << "Presione (" << numero++ << ") para elegir " << nombrefarmacos[i] << "\n";
                 }
-                cout << "Ingrese el articulo al cual le quiere modificar las existencias \n";
+                cout << "Ingrese el articulo al cual le quiere modificar las existencias o cero para finalizar el proceso\n";
                 cin >> switchcase;
                 switch (switchcase) {
                     case 0:
