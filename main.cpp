@@ -407,6 +407,7 @@ void modulo1(){
                 <<"3=Aseguradora General, S.A.\n"
                 <<"4=Seguros el Roble\n"
                 <<"5=Mapfre\n";
+
             cin>>dess;
             switch (dess)
             {
