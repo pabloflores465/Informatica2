@@ -586,7 +586,7 @@ void modulo3(){
                 cout << titulartarjeta ;
             cout << "\n";
             cout << "El seguro mas usado es: \n";
-            cout << "insertar el seguro \n";
+
     }
 }
 
@@ -739,7 +739,7 @@ void modulo4(){
             cout << "El total de ventas es: \n";
             cout << suma << "\n";
         }
-            //Caso 0
+            //Caso 0f
         else if(accion==0){
 
         }
