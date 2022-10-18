@@ -31,7 +31,7 @@ float preciofarmacos[10]{186.95,26.00,64.99,33.02,26.95,28.20,559.98,96.76,104.7
 
 //Modulo 1
 //Existencias de los farmacos
-double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
+float existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
 
 //Modulo 2
 //Aseguradoras Usadas
@@ -79,17 +79,17 @@ void modulo3();
 //Modulo4
 void modulo4();
 
+//Mensaje Error
+void mensajeError();
+
 
 int main() {
     //Este es el rol que el usuario ingresa
     int rolIngresado=0;
     //Este es un contador general
     int contadorGeneral=0;
-
     //Numero de intentos fallidos
     int numeroFallas=0;
-    //Se usa para verificar que sea un cliente
-    int cliente;
     //Se usa para verificar que sea
     int dependiente;
     //Se usa para verificar que sea un cliente
@@ -136,7 +136,6 @@ int main() {
 
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
-            contadorGeneral=0;
             while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&bloqueado[contadorGeneral]!=1){
                 contadorGeneral++;
             }
@@ -288,7 +287,7 @@ int main() {
 void modulo1(){
     int modulo1;
     int i=0;
-    int ii=0;
+    int ii;
 
     cout<<"Este modulo es para comprar productos, para salir de este modulo presione (0)\n"<<endl;
 
@@ -302,17 +301,17 @@ void modulo1(){
 
     //Productos a elegir
     int num=1;
-    for (int i=0;i<10;i++)
+    for (int b=0;b<10;b++)
     {
-        cout<<"Presione ("<<num++<<") para elegir "<<nombrefarmacos[i]<<"\n"
-            <<"Precio: Q"<<preciofarmacos[i]<<"\n"
-            <<"Descripcion: "<<descripcionfarmacos[i]<<" "<<"("<<cantidadfarmacos[i]<<")"<<"\n"
-            <<"Las existencias de este producto son: "<<existenciasfarmacos [i]<<"\n\n";
+        cout<<"Presione ("<<num++<<") para elegir "<<nombrefarmacos[b]<<"\n"
+            <<"Precio: Q"<<preciofarmacos[b]<<"\n"
+            <<"Descripcion: "<<descripcionfarmacos[b]<<" "<<"("<<cantidadfarmacos[b]<<")"<<"\n"
+            <<"Las existencias de este producto son: "<<existenciasfarmacos [b]<<"\n\n";
 
     }
 
     ii=0;
-    float sumacl=0.0;
+    double sumacl=0.0;
     do{
         cout<<"Escriba aqui el numero del medicamento que quiere elegir";
         if (i!=0)
@@ -413,6 +412,10 @@ void modulo1(){
                 ii++;
                 break;
             }
+            default:{
+                mensajeError();
+                break;
+            }
         }
     }
     while(modulo1!=0);
@@ -429,7 +432,7 @@ void modulo1(){
         if (descuentoseguro==1)
         {
             int dess;
-            float descuentoaplicado=0;
+            double descuentoaplicado=0.0;
             cout<<"Ingrese el seguro con el que usted cuenta\n";
             cout<<"1=Seguros GyT\n"
                 <<"2=Seguro Agromercantil\n"
@@ -465,9 +468,12 @@ void modulo1(){
                     descuentoaplicado=sumacl*0.25;
                     break;
                 }
+                default:{
+                    mensajeError();
+                    break;
+                }
             }
             cout<<"El nuevo total a pagar con el descuento aplicado es de "<<descuentoaplicado<<"\n";
-            descuentoaplicado=0;
         }
         else {
             cout<<"usted no cuenta con un seguro\n";
@@ -505,47 +511,13 @@ void modulo2(){
         <<"4=Mapfre\n";
     cin>>seguro;
     //Aqui se Muestra la informacion de la aseguradora seleccionada
-    switch(seguro) {
-        //Seguros GyT
-        case 0: {
-            cout << aseguradora[seguro] << endl;
-            cout << "Su copago es: \n"
-                 << (tazaDescuento[seguro]) * 100 << "%" << endl;
-            break;
-        }
-            //Seguro Agromercantil |
-        case 1: {
-            cout << aseguradora[seguro] << endl;
-            cout << "Su copago es: \n"
-                 << (tazaDescuento[seguro]) * 100 << "%" << endl;
-            break;
-        }
-            //Aseguradora General, S.A.
-        case 2: {
-            cout << aseguradora[seguro] << endl;
-            cout << "Su copago es: \n"
-                 << (tazaDescuento[seguro]) * 100 << "%" << endl;
-            break;
-        }
-            //Seguros El Roble
-        case 3: {
-            cout << aseguradora[seguro] << endl;
-            cout << "Su copago es: \n"
-                 << (tazaDescuento[seguro]) * 100 << "%" << endl;
-            break;
-        }
-            //Mapfre
-        case 4: {
-            cout << aseguradora[seguro] << endl;
-            cout << "Su copago es: \n"
-                 << (tazaDescuento[seguro]) * 100 << "%" << endl;
-            break;
-        }
-            //Mensaje de Error
-        default: {
-            cout << "Error no se seleccionó un valor válido" << endl;
-            break;
-        }
+    if(seguro<=4){
+        cout << aseguradora[seguro] << endl;
+        cout << "Su copago es: \n"
+             << (tazaDescuento[seguro]) * 100 << "%" << endl;
+    }
+    else {
+        cout<<"No se selecciono un seguro válido"<<endl;
     }
 }
 
@@ -558,7 +530,7 @@ void modulo3(){
     cin >> info;
     switch (info)
     {
-        case 1:
+        case 1:{
             cout<<"Resumen del día \n";
             cout << "Inventario de medicamentos:  \n";
             cout << nombrefarmacos[0] << " " << existenciasfarmacos [0]  <<  "\n" ;
@@ -579,14 +551,26 @@ void modulo3(){
                 cout<<nombre[i]<<endl;
             }
             break;
-        case 2:
+        }
+
+        case 2:{
             cout << "Informacion de las aseguradoras \n ";
             cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
-            if (descuentoseguro=1)
+            if (descuentoseguro==1){
                 cout << titulartarjeta ;
-            cout << "\n";
-            cout << "El seguro mas usado es: \n";
-            cout << "insertar el seguro \n";
+                cout << "\n";
+                cout << "El seguro mas usado es: \n";
+                cout << "insertar el seguro \n";
+            }
+            else {
+                cout<<"Ningun cliente tiene seguro"<<endl;
+            }
+            break;
+        }
+        default:{
+            mensajeError();
+            break;
+        }
     }
 }
 
@@ -631,14 +615,14 @@ void modulo4(){
             //Estado de Farmacos
         else if(accion==2) {
             int numero = 1;
-            for (int i = 0; i < 10; i++) {
-                cout << "Presione (" << numero++ << ") para elegir " << nombrefarmacos[i] << "\n";
+            for (auto & nombrefarmaco : nombrefarmacos) {
+                cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
             }
             int switchcase;
             do {
 
-                for (int i = 0; i < 10; i++) {
-                    cout << "Presione (" << numero++ << ") para elegir " << nombrefarmacos[i] << "\n";
+                for (auto & nombrefarmaco : nombrefarmacos) {
+                    cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
                 }
                 cout << "Ingrese el articulo al cual le quiere modificar las existencias o cero para finalizar el proceso\n";
                 cin >> switchcase;
@@ -716,6 +700,10 @@ void modulo4(){
                         break;
 
                     }
+                    default:{
+                        mensajeError();
+                        break;
+                    }
                 }
 
             } while (switchcase != 0);
@@ -750,6 +738,10 @@ void modulo4(){
     }
     while (accion!=0);
 
+}void mensajeError(){
+    cout<<"Error no se ingreso un numero válido"<<endl;
 }
+
+
 
 
