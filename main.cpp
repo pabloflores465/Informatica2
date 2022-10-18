@@ -63,6 +63,10 @@ string password[200];
 //El usuario esta bloqueado?
 int bloqueado[200];
 
+// El contador de los productos que llevan
+int ii;
+float sumacl=0.0;
+
 //Main
 
 //Declaracion de las funciones
@@ -288,7 +292,6 @@ int main() {
 void modulo1(){
     int modulo1;
     int i=0;
-    int ii;
 
     cout<<"Este modulo es para comprar productos, para salir de este modulo presione (0)\n"<<endl;
 
@@ -312,7 +315,6 @@ void modulo1(){
     }
 
     ii=0;
-    float sumacl=0.0;
     do{
         cout<<"Escriba aqui el numero del medicamento que quiere elegir";
         if (i!=0)
@@ -534,19 +536,14 @@ void modulo3(){
         case 1:{
             cout<<"Resumen del día \n";
             cout << "Inventario de medicamentos:  \n";
-            cout << nombrefarmacos[0] << " " << existenciasfarmacos [0]  <<  "\n" ;
-            cout << nombrefarmacos[1] << " " <<  existenciasfarmacos [1]  <<  "\n" ;
-            cout << nombrefarmacos[2] << " " <<  existenciasfarmacos [2]  <<  "\n" ;
-            cout << nombrefarmacos[3] << " " <<  existenciasfarmacos [3]  <<  "\n" ;
-            cout << nombrefarmacos[4] << " " <<  existenciasfarmacos [4]  <<  "\n" ;
-            cout << nombrefarmacos[5] << " " <<  existenciasfarmacos [5]  <<  "\n" ;
-            cout << nombrefarmacos[6] << " " <<  existenciasfarmacos [6]  <<  "\n" ;
-            cout << nombrefarmacos[7] << " " <<  existenciasfarmacos [7]  <<  "\n" ;
-            cout << nombrefarmacos[8] << " " <<  existenciasfarmacos [8]  <<  "\n" ;
-            cout << nombrefarmacos[9] << " " <<  existenciasfarmacos [9]  <<  "\n" ;
-            cout << "\n";
-            cout << "Total de medicamentos vendidos: \n" << endl ;
-            cout << "\n";
+            for (int i = 0; i < 10; ++i) {
+                cout << nombrefarmacos[i] << "\n"
+                     << existenciasfarmacos[i] << "\n";
+
+            }
+
+            cout << "Total de ventas : \n" << endl ;
+            cout << ii << "y el totales de:" << sumacl;
             cout << "Total de clientes que compraron el día de hoy: \n";
             for (int i = 0; i < lola ; ++i) {
                 cout<<nombre[i]<<endl;
