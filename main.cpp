@@ -557,9 +557,9 @@ void modulo3(){
 
             }
 
-            cout << "Total de ventas : \n" << endl ;
-            cout << ii << "y el totales de:" << sumacl;
-            cout << "Total de clientes que compraron el día de hoy: \n";
+            cout << "El total de clientes que compraron es de : "<<ii<<"\n";
+            cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
+            cout << "Los clientes que compraron el día de hoy: \n";
             for (int i = 0; i < lola ; ++i) {
                 cout<<nombre[i]<<endl;
             }
@@ -758,4 +758,4 @@ void mensajeError(){
 }
 
 
-// Esta no es
+// Esta no es XD
