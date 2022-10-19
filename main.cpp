@@ -173,6 +173,7 @@ int main() {
                         }
                         default: {
                             cout << "Error valor no valido" << endl;
+                            break;
                         }
                     }
                 }
