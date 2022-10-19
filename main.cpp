@@ -211,7 +211,7 @@ int main() {
                     <<"1=Farmacias\n"
                     <<"2=Seguros\n"
                     <<"3=Reportes\n"
-                    <<"Finalizar Ejecicion\n"
+                    <<"0=Finalizar Ejecicion\n"
                     <<endl;
                 cin>>modulo;
                 switch (modulo) {
