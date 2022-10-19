@@ -113,7 +113,8 @@ int main() {
     //Esta es la contraseña del Cliente
     string contraDep;
 
-    cout<<"Hola administrador!!! Por favor realiza la configuración inicial de los usuarios."<<endl;
+    cout<<"Hola administrador\n"<<
+        "Por favor realiza la configuración inicial de los usuarios."<<endl;
 
     do{
         //Ingresan el usuario
