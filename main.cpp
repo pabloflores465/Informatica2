@@ -113,8 +113,8 @@ int main() {
     //Esta es la contraseña del Cliente
     string contraDep;
 
-    cout<<"Hola administrador\n"<<
-        "Por favor realiza la configuración inicial de los usuarios."<<endl;
+   /* cout<<"Hola administrador\n"<<
+        "Por favor realiza la configuración inicial de los usuarios."<<endl;*/
 
     /*do{
         //Ingresan el usuario
@@ -157,27 +157,31 @@ int main() {
                 }
 
                 if (contraCliente == password[contadorGeneral]) {
-                    cout << "¿A que modulo quieres ingresar?\n"
-                         << "1=Farmacias\n"
-                         << "2=Seguros\n"
-                         << "0=Cerrar Sesión\n"
-                         << endl;
-                    cin >> modulo;
-                    switch (modulo) {
-                        case 1: {
-                            modulo1();
-                            break;
-                        }
-                        case 2: {
-                            modulo2();
-                            modulo1();
-                            break;
-                        }
-                        default: {
-                            cout << "Error valor no valido" << endl;
-                            break;
+
+                    do {
+                        cout << "¿A que modulo quieres ingresar?\n"
+                             << "1=Farmacias\n"
+                             << "2=Seguros\n"
+                             << "0=Cerrar Sesión\n"
+                             << endl;
+                        cin >> modulo;
+                        switch (modulo) {
+                            case 1: {
+                                modulo1();
+                                break;
+                            }
+                            case 2: {
+                                modulo2();
+                                break;
+                            }
+                            default: {
+                                cout << "Error valor no valido" << endl;
+                                break;
+                            }
                         }
                     }
+                    while (modulo!=0);
+
                 }
                 else {
                     cout<<"Contraseña incorrecta"<<endl;
@@ -208,31 +212,34 @@ int main() {
                 contadorGeneral++;
             }
             if (dependiente==1){
-                cout<<"¿A que modulo quieres ingresar?\n"
-                    <<"1=Farmacias\n"
-                    <<"2=Seguros\n"
-                    <<"3=Reportes\n"
-                    <<"0=Cerrar Sesión\n"
-                    <<endl;
-                cin>>modulo;
-                switch (modulo) {
-                    case 1:{
-                        modulo1();
-                        break;
-                    }
-                    case 2:{
-                        modulo2();
-                        break;
-                    }
-                    case 3:{
-                        modulo3();
-                        break;
-                    }
-                    default:{
-                        cout<<"Error valor no valido"<<endl;
-                        break;
+                do{
+                    cout<<"¿A que modulo quieres ingresar?\n"
+                        <<"1=Farmacias\n"
+                        <<"2=Seguros\n"
+                        <<"3=Reportes\n"
+                        <<"0=Cerrar Sesión\n"
+                        <<endl;
+                    cin>>modulo;
+                    switch (modulo) {
+                        case 1:{
+                            modulo1();
+                            break;
+                        }
+                        case 2:{
+                            modulo2();
+                            break;
+                        }
+                        case 3:{
+                            modulo3();
+                            break;
+                        }
+                        default:{
+                            cout<<"Error valor no valido"<<endl;
+                            break;
+                        }
                     }
                 }
+                while (modulo!=0);
             }
             else {
                 numeroFallas++;
@@ -253,35 +260,38 @@ int main() {
                 contadorGeneral++;
             }
             if (administrador==1){
-                cout<<"¿A que modulo quieres ingresar?\n"
-                    <<"1=Farmacias\n"
-                    <<"2=Seguros\n"
-                    <<"3=Reportes\n"
-                    <<"4=Administrar\n"
-                    <<"0=Cerrar Sesión\n"
-                    <<endl;
-                cin>>modulo;
-                switch (modulo) {
-                    case 1:{
-                        modulo1();
-                        break;
-                    }
-                    case 2:{
-                        modulo2();
-                        break;
-                    }
-                    case 3:{
-                        modulo3();
-                    }
-                    case 4:{
-                        modulo4();
-                        break;
-                    }
-                    default:{
-                        cout<<"Error valor no valido"<<endl;
-                        break;
+                do {
+                    cout<<"¿A que modulo quieres ingresar?\n"
+                        <<"1=Farmacias\n"
+                        <<"2=Seguros\n"
+                        <<"3=Reportes\n"
+                        <<"4=Administrar\n"
+                        <<"0=Cerrar Sesión\n"
+                        <<endl;
+                    cin>>modulo;
+                    switch (modulo) {
+                        case 1:{
+                            modulo1();
+                            break;
+                        }
+                        case 2:{
+                            modulo2();
+                            break;
+                        }
+                        case 3:{
+                            modulo3();
+                        }
+                        case 4:{
+                            modulo4();
+                            break;
+                        }
+                        default:{
+                            cout<<"Error valor no valido"<<endl;
+                            break;
+                        }
                     }
                 }
+                while (modulo!=0);
             }
             else {
                 numeroFallas++;
@@ -587,7 +597,7 @@ void modulo4(){
              <<"2=Modificacion de la Info de farmacia\n"
              <<"3=Bloquear o desbloquear usuarios\n"
              <<"4=Ver las ventas totales\n"
-             <<"0=Cerrar Sesión\n"
+             <<"0=Cerrar modulo\n"
              <<endl;
         cin>>accion;
 
