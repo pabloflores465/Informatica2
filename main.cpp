@@ -562,6 +562,7 @@ void modulo3(){
         }
         default:{
             mensajeError();
+            break;
         }
     }
 }
