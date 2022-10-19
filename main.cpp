@@ -92,8 +92,6 @@ int main() {
     int rolIngresado=0;
     //Este es un contador general
     int contadorGeneral;
-    //Numero de intentos fallidos
-    int numeroFallas=0;
     //Se usa para verificar que sea
     int dependiente;
     //Se usa para verificar que sea un cliente
@@ -193,6 +191,9 @@ int main() {
                 }
 
             }
+            else {
+                cout<<"Usuario no encotrado, por ingreselo de nuevo"<<endl;
+            }
 
         }
         else if (rolIngresado==2){
@@ -242,7 +243,7 @@ int main() {
                 while (modulo!=0);
             }
             else {
-                numeroFallas++;
+               cout<<"Empleado no econtrado, por favor pruebe de nuevo"<<endl;
             }
         }
         else if (rolIngresado==3){
@@ -294,7 +295,7 @@ int main() {
                 while (modulo!=0);
             }
             else {
-                numeroFallas++;
+                cout<<"Usuario administrador incorrecto,por favor pruebe de nuevo"<<endl;
             }
         }
     }
