@@ -116,7 +116,7 @@ int main() {
     cout<<"Hola administrador\n"<<
         "Por favor realiza la configuración inicial de los usuarios."<<endl;
 
-    do{
+    /*do{
         //Ingresan el usuario
         cout<<"Usuario"<<endl;
         cin>>nombreADMIN;
@@ -129,9 +129,9 @@ int main() {
         else {
             cout<<"ERROR: Usuario o Contraseña de administrador incorrectos"<<endl;
         }
-    }
-    while (nombreADMIN!="ADMIN"||contraADMIN!="admin");
-
+    }*/
+//    while (nombreADMIN!="ADMIN"||contraADMIN!="admin");
+//
     do{
         cout<<"Bienvenido a Farmacias Batres"<<endl;
         cout<<"¿Quien es usted?\n"
