@@ -166,6 +166,7 @@ int main() {
                         switch (modulo) {
                             case 0:{
                                 cout<<"Sesion cerrada con éxito"<<endl;
+                                break;
                             }
                             case 1: {
                                 modulo1();
@@ -227,6 +228,7 @@ int main() {
                     switch (modulo) {
                         case 0:{
                             cout<<"Sesión cerrada con éxito"<<endl;
+                            break;
                         }
                         case 1:{
                             modulo1();
@@ -279,6 +281,7 @@ int main() {
                     switch (modulo) {
                         case 0:{
                             cout<<"Sesión cerrada con éxito"<<endl;
+                            break;
                         }
                         case 1:{
                             modulo1();
