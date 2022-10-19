@@ -181,8 +181,6 @@ int main() {
                 if(intentos>3){
                     bloqueado[contadorGeneral]=1;
                     cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
-                    system("color 46");
-
                 }
 
             }
@@ -281,8 +279,6 @@ int main() {
                 numeroFallas++;
             }
         }
-
-
     }
     while(rolIngresado!=0);
 
