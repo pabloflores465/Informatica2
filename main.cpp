@@ -130,7 +130,7 @@ int main() {
             cout<<"ERROR: Usuario o Contraseña de administrador incorrectos"<<endl;
         }
     }
-    while (nombreADMIN!="ADMIN"&&contraADMIN!="admin");
+    while (nombreADMIN!="ADMIN"||contraADMIN!="admin");
 
     do{
         cout<<"Bienvenido a Farmacias Batres"<<endl;
