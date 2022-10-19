@@ -160,7 +160,7 @@ int main() {
                     cout << "¿A que modulo quieres ingresar?\n"
                          << "1=Farmacias\n"
                          << "2=Seguros\n"
-                         << "0=Finalizar Ejecicion\n"
+                         << "0=Cerrar Sesión\n"
                          << endl;
                     cin >> modulo;
                     switch (modulo) {
@@ -170,6 +170,7 @@ int main() {
                         }
                         case 2: {
                             modulo2();
+                            modulo1();
                             break;
                         }
                         default: {
@@ -211,7 +212,7 @@ int main() {
                     <<"1=Farmacias\n"
                     <<"2=Seguros\n"
                     <<"3=Reportes\n"
-                    <<"0=Finalizar Ejecicion\n"
+                    <<"0=Cerrar Sesión\n"
                     <<endl;
                 cin>>modulo;
                 switch (modulo) {
@@ -257,7 +258,7 @@ int main() {
                     <<"2=Seguros\n"
                     <<"3=Reportes\n"
                     <<"4=Administrar\n"
-                    <<"0=Finalizar Ejecicion\n"
+                    <<"0=Cerrar Sesión\n"
                     <<endl;
                 cin>>modulo;
                 switch (modulo) {
@@ -586,7 +587,7 @@ void modulo4(){
              <<"2=Modificacion de la Info de farmacia\n"
              <<"3=Bloquear o desbloquear usuarios\n"
              <<"4=Ver las ventas totales\n"
-             <<"0=salir del modulo administrador\n"
+             <<"0=Cerrar Sesión\n"
              <<endl;
         cin>>accion;
 
