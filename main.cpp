@@ -113,6 +113,8 @@ int main() {
     //Esta es la contraseña del Cliente
     string contraDep;
 
+    cout<<"Hola administrador!!! Por favor realiza la configuración inicial de los usuarios."<<endl;
+
     do{
         //Ingresan el usuario
         cout<<"Usuario"<<endl;
@@ -129,8 +131,8 @@ int main() {
     }
     while (nombreADMIN!="ADMIN"&&contraADMIN!="admin");
 
-
     do{
+        cout<<"Bienvenido a Farmacias Batres"<<endl;
         cout<<"¿Quien es usted?\n"
             <<"1=Cliente\n"
             <<"2=Empleado\n"
