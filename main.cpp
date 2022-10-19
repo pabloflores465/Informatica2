@@ -221,9 +221,11 @@ int main() {
                     }
                     case 3:{
                         modulo3();
+                        break;
                     }
                     default:{
                         cout<<"Error valor no valido"<<endl;
+                        break;
                     }
                 }
             }
@@ -272,6 +274,7 @@ int main() {
                     }
                     default:{
                         cout<<"Error valor no valido"<<endl;
+                        break;
                     }
                 }
             }
@@ -469,6 +472,7 @@ void modulo1(){
                 }
                 default:{
                     mensajeError();
+                    break;
                 }
             }
             cout<<"El nuevo total a pagar con el descuento aplicado es de "<<descuentoaplicado<<"\n";
@@ -623,6 +627,7 @@ void modulo4(){
                     case 0:
                     {
                         cout<<"Cambios realizados\n";
+                        break;
                     }
                     case 1: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[0];
@@ -695,6 +700,7 @@ void modulo4(){
                     }
                     default:{
                         mensajeError();
+                        break;
                     }
                 }
 
