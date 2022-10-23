@@ -482,7 +482,7 @@ void modulo1(){
                 case 1:
                 {
                     descuentoaplicado=sumacl*0.75;
-                    cout << "Seguros GyT";
+
                     cin >> gyt;
                     gyt++;
                     break;
@@ -490,7 +490,6 @@ void modulo1(){
                 case 2:
                 {
                     descuentoaplicado=sumacl*0.40;
-                    cout << "Seguro Agromercantíl";
                     cin >> agro;
                     agro++;
                     break;
@@ -498,7 +497,6 @@ void modulo1(){
                 case 3:
                 {
                     descuentoaplicado=sumacl*0.60;
-                    cout << "Seguro General";
                     cin >> gene;
                     gene++;
                     break;
@@ -506,7 +504,6 @@ void modulo1(){
                 case 4:
                 {
                     descuentoaplicado=sumacl*0.5;
-                    cout << "Seguros el Roble";
                     cin >> robl;
                     robl++;
                     break;
@@ -514,7 +511,6 @@ void modulo1(){
                 case 5:
                 {
                     descuentoaplicado=sumacl*0.25;
-                    cout << "Seguros Mapfre";
                     cin >> mapf;
                     mapf++;
                     break;
@@ -608,9 +604,12 @@ void modulo3(){
             cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
             if (descuentoseguro==1){
                 cout << titulartarjeta ;
-                cout << "\n";
                 cout << "El seguro mas usado es: \n";
-                cout << gyt << "\n" << agro << "\n" << gene << "\n" << robl << "\n" << mapf << "\n";
+                cout <<  "Seguros Gyt " << gyt << "\n";
+                cout << "Seguro Agromercantil " << agro << "\n";
+                cout << "Seguro General " << gene << "\n";
+                cout <<  "Seguros el Roble " << robl << "\n";
+                cout << "Seguros Mapfre " << mapf << "\n";
             }
             else {
                 cout<<"No hay cliente con seguro"<<endl;
