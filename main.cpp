@@ -584,9 +584,7 @@ void modulo3(){
             for (int i = 0; i < 10; ++i) {
                 cout << nombrefarmacos[i] << "\n"
                      << existenciasfarmacos[i] << "\n";
-
             }
-
             cout << "El total de productos que llevaron el día de hoy son: "<<ii<<"\n";
             cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
             cout << "Los clientes que compraron el día de hoy: \n";
@@ -595,10 +593,8 @@ void modulo3(){
                 cout<<nombre[i]<<endl;
             }
             cout << "\n";
-
             break;
         }
-
         case 2:{
             cout << "Informacion de las aseguradoras \n ";
             cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
@@ -624,9 +620,7 @@ void modulo3(){
 }
 
 void modulo4(){
-
     int accion;
-
     do {
         //Seleccion de accion del Administrador
         cout <<"¿Que desea hacer?\n"
@@ -669,7 +663,6 @@ void modulo4(){
             }
             int switchcase;
             do {
-
                 for (auto & nombrefarmaco : nombrefarmacos) {
                     cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
                 }
@@ -692,63 +685,54 @@ void modulo4(){
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[1];
                         break;
-
                     }
                     case 3: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[2];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[2];
                         break;
-
                     }
                     case 4: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[3];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[3];
                         break;
-
                     }
                     case 5: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[4];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[4];
                         break;
-
                     }
                     case 6: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[5];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[5];
                         break;
-
                     }
                     case 7: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[6];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[6];
                         break;
-
                     }
                     case 8: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[7];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[7];
                         break;
-
                     }
                     case 9: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[8];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[8];
                         break;
-
                     }
                     case 10: {
                         cout << "La existencia del farmaco es de " << existenciasfarmacos[9];
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[9];
                         break;
-
                     }
                     default:{
                         mensajeError();
@@ -766,7 +750,6 @@ void modulo4(){
                 if (bloqueado[a]==1){
                     cout<<usuario[a]<<"\t Está en la posición: "<<a<<endl;
                 }
-
             }
             cout<<"Pulse la posición en la que se quiere desbloquear"<<endl;
             cin>>b;
@@ -779,7 +762,6 @@ void modulo4(){
         }
             //Caso 0f
         else if(accion==0){
-
         }
             //Mesaje de Error
         else {
@@ -787,11 +769,7 @@ void modulo4(){
         }
     }
     while (accion!=0);
-
 }
-
 void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
-
-
