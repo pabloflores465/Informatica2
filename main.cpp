@@ -33,6 +33,10 @@ float preciofarmacos[10]{186.95,26.00,64.99,33.02,26.95,28.20,559.98,96.76,104.7
 //Existencias de los farmacos
 double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
 
+//Modulo 1
+//Contador de los clientes
+int lolita;
+
 //Modulo 2
 //Aseguradoras Usadas
 string aseguradora[5]{"Seguros GyT","Seguro Agromercantil","Aseguradora General, S.A.","Seguros El Roble","Mapfre"};
@@ -576,6 +580,8 @@ void modulo3(){
             for (int i = 0; i < lola ; ++i) {
                 cout<<nombre[i]<<endl;
             }
+            cout << "\n";
+            cout << lola;
             break;
         }
 
