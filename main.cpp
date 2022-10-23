@@ -33,13 +33,14 @@ float preciofarmacos[10]{186.95,26.00,64.99,33.02,26.95,28.20,559.98,96.76,104.7
 //Existencias de los farmacos
 double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
 
-//Modulo 1
-//Contador de los clientes
-int lolita;
 
 //Modulo 2
 //Aseguradoras Usadas
 string aseguradora[5]{"Seguros GyT","Seguro Agromercantil","Aseguradora General, S.A.","Seguros El Roble","Mapfre"};
+// Contadores para las aseguradoras
+int gyt;
+int agro, gene, robl, mapf;
+
 //Modulo 2
 //Taza de descuento fija
 float tazaDescuento[5]{0.25,0.60,0.40,0.5,0.75,};
@@ -477,29 +478,45 @@ void modulo1(){
             cin>>dess;
             switch (dess)
             {
+                // Añadí esto para que en mi modulo se vea cuales son los seguros que se usan
                 case 1:
                 {
                     descuentoaplicado=sumacl*0.75;
+                    cout << "Seguros GyT";
+                    cin >> gyt;
+                    gyt++;
                     break;
                 }
                 case 2:
                 {
                     descuentoaplicado=sumacl*0.40;
+                    cout << "Seguro Agromercantíl";
+                    cin >> agro;
+                    agro++;
                     break;
                 }
                 case 3:
                 {
                     descuentoaplicado=sumacl*0.60;
+                    cout << "Seguro General";
+                    cin >> gene;
+                    gene++;
                     break;
                 }
                 case 4:
                 {
                     descuentoaplicado=sumacl*0.5;
+                    cout << "Seguros el Roble";
+                    cin >> robl;
+                    robl++;
                     break;
                 }
                 case 5:
                 {
                     descuentoaplicado=sumacl*0.25;
+                    cout << "Seguros Mapfre";
+                    cin >> mapf;
+                    mapf++;
                     break;
                 }
                 default:{
@@ -577,11 +594,12 @@ void modulo3(){
             cout << "El total de productos que llevaron el día de hoy son: "<<ii<<"\n";
             cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
             cout << "Los clientes que compraron el día de hoy: \n";
+            cout << lola << "\n";
             for (int i = 0; i < lola ; ++i) {
                 cout<<nombre[i]<<endl;
             }
             cout << "\n";
-            cout << lola;
+
             break;
         }
 
@@ -592,6 +610,7 @@ void modulo3(){
                 cout << titulartarjeta ;
                 cout << "\n";
                 cout << "El seguro mas usado es: \n";
+                cout << gyt << "\n" << agro << "\n" << gene << "\n" << robl << "\n" << mapf << "\n";
             }
             else {
                 cout<<"No hay cliente con seguro"<<endl;
