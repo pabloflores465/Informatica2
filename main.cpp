@@ -713,165 +713,186 @@ void modulo4(){
     do {
         //Seleccion de accion del Administrador
         cout <<"¿Que desea hacer?\n"
-             <<"1=Control de Accesos\n"
-             <<"2=Modificacion de la Info de farmacia\n"
-             <<"3=Bloquear o desbloquear usuarios\n"
-             <<"4=Ver las ventas totales\n"
+             <<"1=Crear Usuarios\n"
+             <<"2=Modificacion de Existencias\n"
+             <<"3=Bloquear o Desbloqeuar Usuarios\n"
+             <<"4=Cambiar Contraseñas\n"
+             <<"5=Ver las ventas totales\n"
              <<"0=Cerrar modulo\n"
              <<endl;
         cin>>accion;
 
         //Creacion de usuarios
-        if (accion==1){
-            cout<<"Ingrese la información del usuario que desea crear\n";
-            //Usuario
-            cout<<"Ingrese el usuario"<<endl;
-            cin>>usuario[contador];
-            //Nombre
-            cout<<"Ingrese el nombre de la persona"<<endl;
-            cin>>name[contador];
-            //Apellido
-            cout<<"Ingrese el apellido de la persona"<<endl;
-            cin>>lastName[contador];
-            //Rol
-            cout<<"Ingrese el rol de la persona 0=cliente 1=Dependiente"<<endl;
-            cin>>rol[contador];
-            //Contraseña
-            cout<<"Ingrese la contraseña del usuario"<<endl;
-            cin>>password[contador];
-            //Estado (Bloquedo o no Bloqueado)
-            cout<<"¿Está bloqueado el usuario 1=si, 0=no?"<<endl;
-            cin>>bloqueado[contador];
-            contador++;
-        }
-
-            //Estado de Farmacos
-        else if(accion==2) {
-
-
-            int switchcase;
-            do {
-                int numero = 1;
-                for (auto & nombrefarmaco : nombrefarmacos) {
-                    cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
-                }
-                cout << "Ingrese el articulo al cual le quiere modificar las existencias o cero para finalizar el proceso\n";
-                cin >> switchcase;
-                switch (switchcase) {
-                    case 0:
-                    {
-                        cout<<"Cambios realizados\n";
-                        break;
-                    }
-                    case 1: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[0]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[0];
-                        break;
-                    }
-                    case 2: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[1]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[1];
-                        break;
-                    }
-                    case 3: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[2]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[2];
-                        break;
-                    }
-                    case 4: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[3]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[3];
-                        break;
-                    }
-                    case 5: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[4]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[4];
-                        break;
-                    }
-                    case 6: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[5]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[5];
-                        break;
-                    }
-                    case 7: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[6]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[6];
-                        break;
-                    }
-                    case 8: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[7]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[7];
-                        break;
-                    }
-                    case 9: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[8]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[8];
-                        break;
-                    }
-                    case 10: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[9]<<"\n";
-                        cout << "Ingrese el nuevo valor de la existencia\n";
-                        cin >> existenciasfarmacos[9];
-                        break;
-                    }
-                    default:{
-                        mensajeError();
-                        break;
-                    }
-                }
-
-            } while (switchcase != 0);
-        }
-        //Modulo para desbloquear usuarios
-        else if(accion==3){
-            int v=0,e=0;
-            string estadoUsuario;
-            cout<<"Los usuarios bloquedos son: "<<endl;
-            for(int a=0;a<200;a++){
-                if (bloqueado[a]==1){
-                    cout<<usuario[a]<<endl;
-                }
+        switch (accion) {
+            case 0:{
+                cout<<"Módulo cerrado correctamente"<<endl;
+                break;
             }
-            cout<<"Ingrese el usuario al que le quiera cambiar el estado (bloqueado o desbloqueado)"<<endl;
-            cin>>estadoUsuario;
-            for(int b=0;b<200;b++){
-                if (estadoUsuario==usuario[b]){
-                    b=e;
-                    v=1;
+            case 1:{
+                cout<<"Ingrese la información del usuario que desea crear\n";
+                //Usuario
+                cout<<"Ingrese el usuario"<<endl;
+                cin>>usuario[contador];
+                //Nombre
+                cout<<"Ingrese el nombre de la persona"<<endl;
+                cin>>name[contador];
+                //Apellido
+                cout<<"Ingrese el apellido de la persona"<<endl;
+                cin>>lastName[contador];
+                //Rol
+                cout<<"Ingrese el rol de la persona 0=cliente 1=Dependiente"<<endl;
+                cin>>rol[contador];
+                //Contraseña
+                cout<<"Ingrese la contraseña del usuario"<<endl;
+                cin>>password[contador];
+                //Estado (Bloquedo o no Bloqueado)
+                cout<<"¿Está bloqueado el usuario 1=si, 0=no?"<<endl;
+                cin>>bloqueado[contador];
+                contador++;
+                break;
+            }
+            case 2:{
+                int switchcase;
+                do {
+                    int numero = 1;
+                    for (auto & nombrefarmaco : nombrefarmacos) {
+                        cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
+                    }
+                    cout << "Ingrese el articulo al cual le quiere modificar las existencias o cero para finalizar el proceso\n";
+                    cin >> switchcase;
+                    switch (switchcase) {
+                        case 0:
+                        {
+                            cout<<"Cambios realizados\n";
+                            break;
+                        }
+                        case 1: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[0]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[0];
+                            break;
+                        }
+                        case 2: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[1]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[1];
+                            break;
+                        }
+                        case 3: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[2]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[2];
+                            break;
+                        }
+                        case 4: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[3]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[3];
+                            break;
+                        }
+                        case 5: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[4]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[4];
+                            break;
+                        }
+                        case 6: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[5]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[5];
+                            break;
+                        }
+                        case 7: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[6]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[6];
+                            break;
+                        }
+                        case 8: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[7]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[7];
+                            break;
+                        }
+                        case 9: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[8]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[8];
+                            break;
+                        }
+                        case 10: {
+                            cout << "La existencia del farmaco es de " << existenciasfarmacos[9]<<"\n";
+                            cout << "Ingrese el nuevo valor de la existencia\n";
+                            cin >> existenciasfarmacos[9];
+                            break;
+                        }
+                        default:{
+                            mensajeError();
+                            break;
+                        }
+                    }
+
                 }
-
+                while (switchcase != 0);
+                break;
             }
-            if (v==1){
-                cout<<"El usuario seleccionado fue es: "<<usuario[e]<<"\t esta en la posicion "<<e<<endl;
-                cout<<"Pulse la posición en la que se quiere desbloquear"<<endl;
-                cin>>e;
-                cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
-                cin>>bloqueado[e];
+            case 3:{
+                int verificar1=0,e=0;
+                string estadoUsuario;
+                cout<<"Los usuarios bloquedos son: "<<endl;
+                for(int a=0;a<200;a++){
+                    if (bloqueado[a]==1){
+                        cout<<usuario[a]<<endl;
+                    }
+                }
+                cout<<"Ingrese el usuario al que le quiera cambiar el estado (bloqueado o desbloqueado)"<<endl;
+                cin>>estadoUsuario;
+                for(int b=0;b<200;b++){
+                    if (estadoUsuario==usuario[b]){
+                        b=e;
+                        verificar1=1;
+                    }
+                }
+                if (verificar1==1){
+                    cout<<"El usuario seleccionado fue: "<<usuario[e]<<endl;
+                    cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
+                    cin>>bloqueado[e];
+                }
+                else{
+                    cout<<"Error el usuario seleccionado no está en la lista"<<endl;
+                }
+                break;
             }
-            else{
-                cout<<"Error el usuario seleccionado no está en la lista"<<endl;
+            case 4:{
+                int verificar2=0, posicion=0;
+                string usuarioSeleccionado;
+                cout<<"Ingrese el usuario al que le quiera cambiar el estado (bloqueado o desbloqueado)"<<endl;
+                cin>>usuarioSeleccionado;
+                for(int c=0;c<200;c++){
+                    if (usuarioSeleccionado==usuario[c]){
+                        c=posicion;
+                        verificar2=1;
+                    }
+                }
+                if (verificar2==1){
+                    cout<<"El usuario seleccionado fue: "<<usuario[posicion]<<endl;
+                    cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
+                    cin>>password[posicion];
+                }
+                else{
+                    cout<<"Error el usuario seleccionado no está en la lista"<<endl;
+                }
+                break;
             }
-
-        }
-        else if (accion==4){
-            cout << "El total de ventas es: \n";
-            cout << suma << "\n";
-        }
-            //Caso 0f
-        else if(accion==0){
-        }
-            //Mesaje de Error
-        else {
-            cout<<"Error entrada no válida"<<endl;
+            case 5:{
+                cout << "El total de ventas es: \n";
+                cout << suma << "\n";
+                break;
+            }
+            default:{
+                cout<<"Error entrada no válida"<<endl;
+                break;
+            }
         }
     }
     while (accion!=0);
