@@ -833,17 +833,34 @@ void modulo4(){
         }
         //Modulo para desbloquear usuarios
         else if(accion==3){
-            int b=0;
+            int v=0,e=0;
+            string estadoUsuario;
             cout<<"Los usuarios bloquedos son: "<<endl;
             for(int a=0;a<200;a++){
                 if (bloqueado[a]==1){
-                    cout<<usuario[a]<<"\t Está en la posición: "<<a<<endl;
+                    cout<<usuario[a]<<endl;
                 }
             }
-            cout<<"Pulse la posición en la que se quiere desbloquear"<<endl;
-            cin>>b;
-            cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
-            cin>>bloqueado[b];
+            cout<<"Ingrese el usuario al que le quiera cambiar el estado (bloqueado o desbloqueado)"<<endl;
+            cin>>estadoUsuario;
+            for(int b=0;b<200;b++){
+                if (estadoUsuario==usuario[b]){
+                    b=e;
+                    v=1;
+                }
+
+            }
+            if (v==1){
+                cout<<"El usuario seleccionado fue es: "<<usuario[e]<<"\t esta en la posicion "<<e<<endl;
+                cout<<"Pulse la posición en la que se quiere desbloquear"<<endl;
+                cin>>e;
+                cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
+                cin>>bloqueado[e];
+            }
+            else{
+                cout<<"Error el usuario seleccionado no está en la lista"<<endl;
+            }
+
         }
         else if (accion==4){
             cout << "El total de ventas es: \n";
