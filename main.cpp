@@ -454,7 +454,7 @@ void modulo1(){
         <<"El total de productos que usted comprara es de "<<ii<<"\n\n";
 
     if(ii!=0) {
-        cout<<"¿Usted cuenta con alguno de los siguientes seguro?\n"
+        cout<<"¿Usted cuenta con seguro?\n"
             <<"Presione 1 para si y 0 para no\n";
         cin>>descuentoseguro;
 
@@ -570,7 +570,7 @@ void modulo3(){
 
             }
 
-            cout << "El total de clientes que compraron es de : "<<ii<<"\n";
+            cout << "El total de productos que llevaron el día de hoy son: "<<ii<<"\n";
             cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
             cout << "Los clientes que compraron el día de hoy: \n";
             for (int i = 0; i < lola ; ++i) {
