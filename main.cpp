@@ -326,7 +326,7 @@ void modulo1(){
     int i=0;
 
     cout<<"Este modulo es para comprar productos, para salir de este modulo presione (0)\n"<<endl;
-
+    cout<<"El máximo de medicamentos que se pueden comprar es de 3\n";
     cout<<"Los productos que usted puede elegir son los siguientes: \n";
 
     //Se le da informacion al usuario acerca de los farmaco
@@ -337,6 +337,7 @@ void modulo1(){
 
     //Productos a elegir
     int num=1;
+    int iii=0;
     for (int b=0;b<10;b++)
     {
         cout<<"Presione ("<<num++<<") para elegir "<<nombrefarmacos[b]<<"\n"
@@ -368,83 +369,162 @@ void modulo1(){
             }
             case 1:
             {
-                suma=suma+preciofarmacos[0];
-                sumacl=sumacl+preciofarmacos[0];
-                existenciasfarmacos [0]--;
-                ii++;
+                if (existenciasfarmacos[0]!=0)
+                {
+                    suma=suma+preciofarmacos[0];
+                    sumacl=sumacl+preciofarmacos[0];
+                    existenciasfarmacos [0]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
-
             }
             case 2:
             {
-                suma=suma+preciofarmacos[1];
-                sumacl=sumacl+preciofarmacos[1];
-                existenciasfarmacos [1]--;
-                ii++;
+                if (existenciasfarmacos[1]!=0)
+                {
+                    suma=suma+preciofarmacos[1];
+                    sumacl=sumacl+preciofarmacos[1];
+                    existenciasfarmacos [1]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 3:
             {
-                suma=suma+preciofarmacos[2];
-                sumacl=sumacl+preciofarmacos[2];
-                existenciasfarmacos [2]--;
-                ii++;
+                if (existenciasfarmacos[2]!=0)
+                {
+                    suma=suma+preciofarmacos[2];
+                    sumacl=sumacl+preciofarmacos[2];
+                    existenciasfarmacos [2]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 4:
             {
-                suma=suma+preciofarmacos[3];
-                sumacl=sumacl+preciofarmacos[3];
-                existenciasfarmacos [3]--;
-                ii++;
+                if (existenciasfarmacos[3]!=0)
+                {
+                    suma=suma+preciofarmacos[3];
+                    sumacl=sumacl+preciofarmacos[3];
+                    existenciasfarmacos [3]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 5:
             {
-                suma=suma+preciofarmacos[4];
-                sumacl=sumacl+preciofarmacos[4];
-                existenciasfarmacos [4]--;
-                ii++;
+                if (existenciasfarmacos[4]!=0)
+                {
+                    suma=suma+preciofarmacos[4];
+                    sumacl=sumacl+preciofarmacos[4];
+                    existenciasfarmacos [4]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 6:
             {
-                suma=suma+preciofarmacos[5];
-                sumacl=sumacl+preciofarmacos[5];
-                existenciasfarmacos [5]--;
-                ii++;
+                if (existenciasfarmacos[5]!=0)
+                {
+                    suma=suma+preciofarmacos[5];
+                    sumacl=sumacl+preciofarmacos[5];
+                    existenciasfarmacos [5]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 7:
             {
-                suma=suma+preciofarmacos[6];
-                sumacl=sumacl+preciofarmacos[6];
-                existenciasfarmacos [6]--;
-                ii++;
+                if (existenciasfarmacos[6]!=0)
+                {
+                    suma=suma+preciofarmacos[6];
+                    sumacl=sumacl+preciofarmacos[6];
+                    existenciasfarmacos [6]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 8:
             {
-                suma=suma+preciofarmacos[7];
-                sumacl=sumacl+preciofarmacos[7];
-                existenciasfarmacos [7]--;
-                ii++;
+                if (existenciasfarmacos[7]!=0)
+                {
+                    suma=suma+preciofarmacos[7];
+                    sumacl=sumacl+preciofarmacos[7];
+                    existenciasfarmacos [7]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 9:
             {
-                suma=suma+preciofarmacos[8];
-                sumacl=sumacl+preciofarmacos[8];
-                existenciasfarmacos [8]--;
-                ii++;
+                if (existenciasfarmacos[8]!=0)
+                {
+                    suma=suma+preciofarmacos[8];
+                    sumacl=sumacl+preciofarmacos[8];
+                    existenciasfarmacos [8]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             case 10:
             {
-                suma=suma+preciofarmacos[9];
-                sumacl=sumacl+preciofarmacos[9];
-                existenciasfarmacos [9]--;
-                ii++;
+                if (existenciasfarmacos[9]!=0)
+                {
+                    suma=suma+preciofarmacos[9];
+                    sumacl=sumacl+preciofarmacos[9];
+                    existenciasfarmacos [9]--;
+                    ii++;
+                    iii++;
+                }
+                else
+                {
+                    cout<<"No hay existencias\n";
+                }
                 break;
             }
             default:{
@@ -453,7 +533,7 @@ void modulo1(){
             }
         }
     }
-    while(modulo1!=0);
+    while(modulo1!=0&&iii<3);
     cout<<"\n";
     cout<<"El total a pagar es de "<<"Q"<<sumacl<<"\n"
         <<"El total de productos que usted comprara es de "<<ii<<"\n\n";
@@ -573,50 +653,59 @@ void modulo3(){
     // Puse esta variable local "info" para que el admin decida que tipo de informacion desplegar
     int info;
     cout << "Ingrese el tipo de información que desea ver" << "\n";
-    cout << "Ingrese 1 para desplegar la informacion de la famacia \n";
-    cout << "Ingrese 2 para desplegar la información de las aseguradoras \n";
-    cin >> info;
-    switch (info)
+    do
     {
-        case 1:{
-            cout<<"Resumen del día \n";
-            cout << "Inventario de medicamentos:  \n";
-            for (int i = 0; i < 10; ++i) {
-                cout << nombrefarmacos[i] << "\n"
-                     << existenciasfarmacos[i] << "\n";
+        cout << "Ingrese 1 para desplegar la informacion de la famacia \n";
+        cout << "Ingrese 2 para desplegar la información de las aseguradoras \n";
+        cout << "Si desea salir de este modulo presione 0\n";
+        cin >> info;
+        switch (info)
+        {
+            case 1:{
+                cout<<"Resumen del día \n";
+                cout << "Inventario de medicamentos:  \n";
+                for (int i = 0; i < 10; i++) {
+                    cout << nombrefarmacos[i] << "\n"
+                         << existenciasfarmacos[i] << "\n";
+                }
+                cout << "El total de productos que llevaron el día de hoy son: "<<ii<<"\n";
+                cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
+                cout << "Los clientes que compraron el día de hoy: \n";
+                cout << lola << "\n";
+                for (int i = 0; i < lola ; ++i) {
+                    cout<<nombre[i]<<endl;
+                }
+                cout << "\n";
+                break;
             }
-            cout << "El total de productos que llevaron el día de hoy son: "<<ii<<"\n";
-            cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
-            cout << "Los clientes que compraron el día de hoy: \n";
-            cout << lola << "\n";
-            for (int i = 0; i < lola ; ++i) {
-                cout<<nombre[i]<<endl;
+            case 2:{
+                cout << "Informacion de las aseguradoras \n ";
+                cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
+                if (descuentoseguro==1){
+                    cout << titulartarjeta ;
+                    cout << "El seguro mas usado es: \n";
+                    cout <<  "Seguros Gyt " << gyt << "\n";
+                    cout << "Seguro Agromercantil " << agro << "\n";
+                    cout << "Seguro General " << gene << "\n";
+                    cout <<  "Seguros el Roble " << robl << "\n";
+                    cout << "Seguros Mapfre " << mapf << "\n";
+                    cout<<"\n";
+                }
+                else {
+                    cout<<"No hay cliente con seguro"<<endl;
+                    cout<<"\n";
+                }
+                break;
             }
-            cout << "\n";
-            break;
+            default:{
+                mensajeError();
+                break;
+            }
         }
-        case 2:{
-            cout << "Informacion de las aseguradoras \n ";
-            cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
-            if (descuentoseguro==1){
-                cout << titulartarjeta ;
-                cout << "El seguro mas usado es: \n";
-                cout <<  "Seguros Gyt " << gyt << "\n";
-                cout << "Seguro Agromercantil " << agro << "\n";
-                cout << "Seguro General " << gene << "\n";
-                cout <<  "Seguros el Roble " << robl << "\n";
-                cout << "Seguros Mapfre " << mapf << "\n";
-            }
-            else {
-                cout<<"No hay cliente con seguro"<<endl;
-            }
-            break;
-        }
-        default:{
-            mensajeError();
-            break;
-        }
+
     }
+    while (info!=0);
+
 }
 
 void modulo4(){
@@ -658,9 +747,7 @@ void modulo4(){
             //Estado de Farmacos
         else if(accion==2) {
             int numero = 1;
-            for (auto & nombrefarmaco : nombrefarmacos) {
-                cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
-            }
+
             int switchcase;
             do {
                 for (auto & nombrefarmaco : nombrefarmacos) {
@@ -675,61 +762,61 @@ void modulo4(){
                         break;
                     }
                     case 1: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[0];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[0]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[0];
                         break;
                     }
                     case 2: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[1];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[1]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[1];
                         break;
                     }
                     case 3: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[2];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[2]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[2];
                         break;
                     }
                     case 4: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[3];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[3]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[3];
                         break;
                     }
                     case 5: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[4];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[4]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[4];
                         break;
                     }
                     case 6: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[5];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[5]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[5];
                         break;
                     }
                     case 7: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[6];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[6]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[6];
                         break;
                     }
                     case 8: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[7];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[7]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[7];
                         break;
                     }
                     case 9: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[8];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[8]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[8];
                         break;
                     }
                     case 10: {
-                        cout << "La existencia del farmaco es de " << existenciasfarmacos[9];
+                        cout << "La existencia del farmaco es de " << existenciasfarmacos[9]<<"\n";
                         cout << "Ingrese el nuevo valor de la existencia\n";
                         cin >> existenciasfarmacos[9];
                         break;
