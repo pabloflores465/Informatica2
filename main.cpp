@@ -610,7 +610,7 @@ void modulo1(){
         cin>>nombre[lola];
         lola++;
         cout<<"\n"
-            <<"Ingre se la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
+            <<"Ingrese la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
         cin>>fechavencimiento;
         cout<<"\n"
             <<"Ingrese el numero de su tarjeta, ejemplo 123456789\n";
@@ -672,6 +672,7 @@ void modulo3(){
                 cout << "EL Total de ventas en quetzales es de: " << suma<<"\n";
                 cout << "Los clientes que compraron el día de hoy: \n";
                 cout << lola << "\n";
+                cout <<"El nombre de los clientes que compraron son:\n";
                 for (int i = 0; i < lola ; ++i) {
                     cout<<nombre[i]<<endl;
                 }
@@ -723,6 +724,7 @@ void modulo4(){
 
         //Creacion de usuarios
         if (accion==1){
+            cout<<"Ingrese la información del usuario que desea crear\n";
             //Usuario
             cout<<"Ingrese el usuario"<<endl;
             cin>>usuario[contador];
@@ -746,10 +748,11 @@ void modulo4(){
 
             //Estado de Farmacos
         else if(accion==2) {
-            int numero = 1;
+
 
             int switchcase;
             do {
+                int numero = 1;
                 for (auto & nombrefarmaco : nombrefarmacos) {
                     cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
                 }
