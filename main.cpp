@@ -736,7 +736,7 @@ void modulo4(){
         cout <<"¿Que desea hacer?\n"
              <<"1=Crear Usuarios\n"
              <<"2=Modificacion de Existencias\n"
-             <<"3=Bloquear o Desbloqeuar Usuarios\n"
+             <<"3=Bloquear o Desbloquear Usuarios\n"
              <<"4=Cambiar Contraseñas\n"
              <<"5=Ver las ventas totales\n"
              <<"0=Cerrar modulo\n"
