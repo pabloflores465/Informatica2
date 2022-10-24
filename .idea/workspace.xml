@@ -17,7 +17,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3d16d62-e32f-4cd6-8864-90b8a56981fd" name="Changes" comment="Version Alfa 2.8&#10;&#10;Detalles Finales" />
+    <list default="true" id="c3d16d62-e32f-4cd6-8864-90b8a56981fd" name="Changes" comment="Version Alfa 2.8&#10;&#10;Detalles Finales">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,6 +120,7 @@
       <workItem from="1666583650223" duration="1455000" />
       <workItem from="1666585573482" duration="1000" />
       <workItem from="1666587169893" duration="23000" />
+      <workItem from="1666625093895" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Commit de prueba">
       <created>1664921903723</created>
