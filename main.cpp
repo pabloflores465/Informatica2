@@ -561,36 +561,30 @@ void modulo1(){
                 case 1:
                 {
                     descuentoaplicado=sumacl*0.75;
-
-                    cin >> gyt;
                     gyt++;
                     break;
                 }
                 case 2:
                 {
                     descuentoaplicado=sumacl*0.40;
-                    cin >> agro;
                     agro++;
                     break;
                 }
                 case 3:
                 {
                     descuentoaplicado=sumacl*0.60;
-                    cin >> gene;
                     gene++;
                     break;
                 }
                 case 4:
                 {
                     descuentoaplicado=sumacl*0.5;
-                    cin >> robl;
                     robl++;
                     break;
                 }
                 case 5:
                 {
                     descuentoaplicado=sumacl*0.25;
-                    cin >> mapf;
                     mapf++;
                     break;
                 }
