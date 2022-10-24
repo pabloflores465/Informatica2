@@ -1,0 +1,3 @@
+/Users/randyrivera/Documents/Informatica2/cmake-build-debug/CMakeFiles/Informatica2.dir
+/Users/randyrivera/Documents/Informatica2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/randyrivera/Documents/Informatica2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
