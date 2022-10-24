@@ -676,7 +676,6 @@ void modulo3(){
             }
             case 2:{
                 cout << "Informacion de las aseguradoras \n ";
-                cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
                 if (descuentoseguro==1){
                     cout << titulartarjeta ;
                     cout << "Personas que han usado los seguros: \n";
