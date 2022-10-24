@@ -542,7 +542,7 @@ void modulo1(){
 
     if(ii!=0) {
         cout<<"¿Usted cuenta con seguro?\n"
-            <<"Presione 1 para si y 0 para no\n";
+            <<"Presione 1 para si y cualquier otro numero para no\n";
         cin>>descuentoseguro;
 
 
@@ -677,14 +677,15 @@ void modulo3(){
                 break;
             }
             case 2:{
-                cout << "Informacion de las aseguradoras \n ";
+
                 if (descuentoseguro==1){
                     cout << titulartarjeta ;
-                    cout <<  "Seguros Gyt " << gyt << "\n";
-                    cout << "Seguro Agromercantil " << agro << "\n";
-                    cout << "Seguro General " << gene << "\n";
-                    cout <<  "Seguros el Roble " << robl << "\n";
-                    cout << "Seguros Mapfre " << mapf << "\n";
+                    cout << "Informacion de las aseguradoras\n";
+                    cout <<  "Seguros Gyt " <<"cuenta con "<<gyt <<" clientes"<<"\n";
+                    cout << "Seguro Agromercantil " <<"cuenta con "<< agro <<" clientes" "\n";
+                    cout << "Seguro General " <<"cuenta con "<<gene <<" clientes" "\n";
+                    cout <<  "Seguros el Roble " <<"cuenta con "<<robl <<" clientes" "\n";
+                    cout << "Seguros Mapfre " <<"cuenta con "<<mapf <<" clientes" "\n";
                     cout<<"\n";
                     // cout << "El seguro mas utilizado es: " << juancho << "\n";
                     map<string, int>map1;
@@ -708,6 +709,7 @@ void modulo3(){
                               << ": "
                               << max
                               << std::endl;
+                    cout<<"\n";
 
                 }
                 else {
