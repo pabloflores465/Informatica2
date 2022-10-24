@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "algorithm"
 
 using namespace std;
 
@@ -645,6 +646,7 @@ void modulo2(){
 void modulo3(){
     // Puse esta variable local "info" para que el admin decida que tipo de informacion desplegar
     int info;
+    int juancho = max({gyt,agro,gene,robl,mapf});
     cout << "Ingrese el tipo de información que desea ver" << "\n";
     do
     {
@@ -677,13 +679,15 @@ void modulo3(){
                 cout << "Los clientes que han utilizado su seguro en esta farmacia son: \n";
                 if (descuentoseguro==1){
                     cout << titulartarjeta ;
-                    cout << "El seguro mas usado es: \n";
+                    cout << "Personas que han usado los seguros: \n";
                     cout <<  "Seguros Gyt " << gyt << "\n";
                     cout << "Seguro Agromercantil " << agro << "\n";
                     cout << "Seguro General " << gene << "\n";
                     cout <<  "Seguros el Roble " << robl << "\n";
                     cout << "Seguros Mapfre " << mapf << "\n";
                     cout<<"\n";
+                    cout << "El seguro mas utilizado es: " << juancho << "\n";
+
                 }
                 else {
                     cout<<"No hay cliente con seguro"<<endl;
