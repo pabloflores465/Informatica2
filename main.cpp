@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include "algorithm"
-
+#include<tuple>
+#include <map>
+#include <climits>
 using namespace std;
 
 //NO TOCAR Seleccion de los modulos
@@ -646,7 +648,7 @@ void modulo2(){
 void modulo3(){
     // Puse esta variable local "info" para que el admin decida que tipo de informacion desplegar
     int info;
-    int juancho = max({gyt,agro,gene,robl,mapf});
+
     cout << "Ingrese el tipo de información que desea ver" << "\n";
     do
     {
@@ -678,14 +680,34 @@ void modulo3(){
                 cout << "Informacion de las aseguradoras \n ";
                 if (descuentoseguro==1){
                     cout << titulartarjeta ;
-                    cout << "Personas que han usado los seguros: \n";
                     cout <<  "Seguros Gyt " << gyt << "\n";
                     cout << "Seguro Agromercantil " << agro << "\n";
                     cout << "Seguro General " << gene << "\n";
                     cout <<  "Seguros el Roble " << robl << "\n";
                     cout << "Seguros Mapfre " << mapf << "\n";
                     cout<<"\n";
-                    cout << "El seguro mas utilizado es: " << juancho << "\n";
+                    // cout << "El seguro mas utilizado es: " << juancho << "\n";
+                    map<string, int>map1;
+                    map1["Seguros GyT"] = gyt;
+                    map1["Seguro Agromercantil"] = agro;
+                    map1["Seguro General"] = gene;
+                    map1["Seguros el Roble"] = robl;
+                    map1["Seguros Mapfre"] = mapf;
+
+                    map<string, int>::iterator it;
+                    int min = INT_MAX, max = INT_MIN;
+                    string nombre = "";
+                    for (it = map1.begin(); it != map1.end(); it++)
+                    {
+                        if (it->second > max) {
+                            max = it->second;
+                            nombre = it->first;
+                        }
+                    }
+                    std::cout<< "El seguro mas usado es: " << nombre
+                              << ": "
+                              << max
+                              << std::endl;
 
                 }
                 else {
