@@ -726,26 +726,35 @@ void modulo3(){
                             }
                         }
                     }
-                        if (band==1)
+
+                    switch (band)
+                    {
+                        case 1:
                         {
                             cout<<"El seguro con más clientes es Seguro GyT\n";
+                            break;
                         }
-                        else if (band==2)
+                        case 2:
                         {
                             cout<<"El seguro con más clientes es Seguro Agromercantil\n";
+                            break;
                         }
-                        else if (band==3)
+                        case 3:
                         {
                             cout<<"El seguro con más clientes es Seguro General\n";
+                            break;
                         }
-                        else if (band==4)
+                        case 4:
                         {
                             cout<<"El seguro con más clientes es Seguros El Roble\n";
+                            break;
                         }
-                        else if (band==5)
+                        case 5:
                         {
                             cout<<"El seguro con más clientes es Seguros Mapfre\n";
+                            break;
                         }
+                    }
                     }
                 else {
                     cout<<"No se uso ninguna seguradora\n";
@@ -956,4 +965,4 @@ void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
 
-//LOLITA Y RANDY XD
+//LOLA Y RANDY Y LOLITA
