@@ -921,3 +921,4 @@ void modulo4(){
 void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
+//esto essss randy piña
