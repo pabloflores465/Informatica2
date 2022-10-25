@@ -876,7 +876,7 @@ void modulo4(){
                 }
                 if (verificar1==1){
                     cout<<"El usuario seleccionado fue: "<<usuario[e]<<endl;
-                    cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
+                    cout<<"Presione 0=para desbloquear y 1=para bloquear"<<endl;
                     cin>>bloqueado[e];
                 }
                 else{
