@@ -887,7 +887,7 @@ void modulo4(){
             case 4:{
                 int verificar2=0, posicion=0;
                 string usuarioSeleccionado;
-                cout<<"Ingrese el usuario al que le quiera cambiar el estado (bloqueado o desbloqueado)"<<endl;
+                cout<<"Ingrese el usuario al que le quiere cambiar la contraseña"<<endl;
                 cin>>usuarioSeleccionado;
                 for(int c=0;c<200;c++){
                     if (usuarioSeleccionado==usuario[c]){
@@ -897,7 +897,7 @@ void modulo4(){
                 }
                 if (verificar2==1){
                     cout<<"El usuario seleccionado fue: "<<usuario[posicion]<<endl;
-                    cout<<"Presione 0=para desbloquear y 1=para que siga bloqueado"<<endl;
+                    cout<<"Coloque la nueva contraseña"<<endl;
                     cin>>password[posicion];
                 }
                 else{
