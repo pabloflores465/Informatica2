@@ -19,11 +19,6 @@ string nombrefarmacos[10]{"Ibuprofeno 100mg","Nauseol 50mg","PEPTO-BISMOL Cereza
 string descripcionfarmacos[10]{"Antiinflamatorio","Medicamento para eliminar la naúseas, mareos y vómitos","Medicamento usado para el tratamiento de la indigestión, el malestar estomacal, la diarrea","Descongestion nasal","Medicamento para aliviar la tos y la gripe","Fortalece las defensas del organismo y ayuda a la cicatrizacion","Antibiotico de amplio espectro","Medicamento para tratar el dolor, la fiebre y la inflamación","Medicamento para aliviar la tos y el resfriado","Medicamento para aliviar dolores neuriticos"};
 
 //Modulo 1
-//Presentacion del Farmaco
-//// Esta parte que ma volé ya que en la parte del tamaño de farmaco se indica cual es su presentacion.
-
-
-//Modulo 1
 //Tamaño del farmaco
 string cantidadfarmacos[10]{"100 tabletas","2 ampollas","ml ","ml","12 tabletas","20 tabletas","12 tabletas","100 tabletas","100 comprimidos","2 ampollas",};
 
@@ -35,7 +30,6 @@ float preciofarmacos[10]{186.95,26.00,64.99,33.02,26.95,28.20,559.98,96.76,104.7
 //Modulo 1
 //Existencias de los farmacos
 double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
-
 
 //Modulo 2
 //Aseguradoras Usadas
@@ -118,7 +112,6 @@ int main() {
     string nombreDep;
     //Esta es la contraseña del Cliente
     string contraDep;
-
    cout<<"Hola administrador\n"<<
         "Por favor realiza la configuración inicial de los usuarios."<<endl;
    do{
@@ -340,6 +333,7 @@ void modulo1(){
     //Productos a elegir
     int num=1;
     int iii=0;
+    //Visualiza la información de los productos disponibles
     for (int b=0;b<10;b++)
     {
         cout<<"Presione ("<<num++<<") para elegir "<<nombrefarmacos[b]<<"\n"
@@ -350,6 +344,9 @@ void modulo1(){
     }
 
     ii=0;
+    //Compra de medicamentos
+    //Los "if" muestran cuando si hay exitencias
+    //Los "else" muestran cuando no hay existencias
     do{
         cout<<"Escriba aqui el numero del medicamento que quiere elegir";
         if (i!=0)
@@ -537,15 +534,15 @@ void modulo1(){
     }
     while(modulo1!=0&&iii<3);
     cout<<"\n";
+    //Subtotal a pagar
     cout<<"El total a pagar es de "<<"Q"<<sumacl<<"\n"
         <<"El total de productos que usted comprara es de "<<ii<<"\n\n";
-
+    //Pregunta para ver si el usuario cuenta con seguro
     if(ii!=0) {
         cout<<"¿Usted cuenta con seguro?\n"
             <<"Presione 1 para si y cualquier otro numero para no\n";
         cin>>descuentoseguro;
-
-
+    //Pregunta al usuario para ver con que seguros cuenta
         if (descuentoseguro==1)
         {
             int dess;
@@ -560,50 +557,60 @@ void modulo1(){
             cin>>dess;
             switch (dess)
             {
-                // Añadí esto para que en mi modulo se vea cuales son los seguros que se usan
+                //aplicacion del descuento de cada seguro
                 case 1:
                 {
                     descuentoaplicado=sumacl*0.75;
+                    //contador de clientes de seguro gyt
                     gyt++;
                     break;
                 }
                 case 2:
                 {
                     descuentoaplicado=sumacl*0.40;
+                    //contador de clientes de seguro agromercantil
                     agro++;
                     break;
                 }
                 case 3:
                 {
                     descuentoaplicado=sumacl*0.60;
+                    //contador de clientes de Aseguradora general
                     gene++;
                     break;
                 }
                 case 4:
                 {
                     descuentoaplicado=sumacl*0.5;
+                    //contador de cliente sde seguros el Roble
                     robl++;
                     break;
                 }
                 case 5:
                 {
                     descuentoaplicado=sumacl*0.25;
+                    //contador de clientes de seguro Mapfre
                     mapf++;
                     break;
                 }
                 default:{
+                    //Mensaje de error por datos mal ingresados
                     mensajeError();
                     break;
                 }
             }
+            //Mensaje del nuevo subtototal con el nuevo seguro aplicado
             cout<<"El nuevo total a pagar con el descuento aplicado es de "<<descuentoaplicado<<"\n";
         }
         else {
+            //Mensaje a clientes que no cuenten con seguro
             cout<<"usted no cuenta con un seguro\n";
         }
+        //Información de pago para el cliente
         cout<<"Ingrese la información de la tarjeta para pagar:\n\n"
             <<"Ingrese el nombre del titular de la tarjeta:\n";
         cin>>nombre[lola];
+        //contador que recorre el arreglo de los nombres
         lola++;
         cout<<"\n"
             <<"Ingrese la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
