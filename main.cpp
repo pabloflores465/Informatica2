@@ -35,8 +35,8 @@ double existenciasfarmacos[10]{20,20,20,20,20,20,20,20,20,20};
 //Aseguradoras Usadas
 string aseguradora[5]{"Seguros GyT","Seguro Agromercantil","Aseguradora General, S.A.","Seguros El Roble","Mapfre"};
 // Contadores para las aseguradoras
-int gyt;
-int agro, gene, robl, mapf;
+int gyt=0;
+int agro=0, gene=0, robl=0, mapf=0;
 
 //Modulo 2
 //Taza de descuento fija
@@ -694,34 +694,61 @@ void modulo3(){
                     cout <<  "Seguros el Roble " <<"cuenta con "<<robl <<" clientes" "\n";
                     cout << "Seguros Mapfre " <<"cuenta con "<<mapf <<" clientes" "\n";
                     cout<<"\n";
-                    // cout << "El seguro mas utilizado es: " << juancho << "\n";
-                    map<string, int>map1;
-                    map1["Seguros GyT"] = gyt;
-                    map1["Seguro Agromercantil"] = agro;
-                    map1["Seguro General"] = gene;
-                    map1["Seguros el Roble"] = robl;
-                    map1["Seguros Mapfre"] = mapf;
-
-                    map<string, int>::iterator it;
-                    int min = INT_MAX, max = INT_MIN;
-                    string nombre = "";
-                    for (it = map1.begin(); it != map1.end(); it++)
+                    int mayor;
+                    int band=1;
+                    for (int i=0;i<5;i++)
                     {
-                        if (it->second > max) {
-                            max = it->second;
-                            nombre = it->first;
+                        if (i==0)
+                        {
+                            mayor=gyt;
+                        }
+                        else
+                        {
+                            if (agro>mayor)
+                            {
+                                mayor=agro;
+                                band=2;
+                            }
+                            else if (gene>mayor)
+                            {
+                                mayor=gene;
+                                band=3;
+                            }
+                            else if (robl>mayor)
+                            {
+                                mayor=robl;
+                                band=4;
+                            }
+                            else if (mapf>mayor)
+                            {
+                                mayor=mapf;
+                                band=5;
+                            }
                         }
                     }
-                    std::cout<< "El seguro mas usado es: " << nombre
-                              << ": "
-                              << max
-                              << std::endl;
-                    cout<<"\n";
-
-                }
+                        if (band==1)
+                        {
+                            cout<<"El seguro con más clientes es Seguro GyT\n";
+                        }
+                        else if (band==2)
+                        {
+                            cout<<"El seguro con más clientes es Seguro Agromercantil\n";
+                        }
+                        else if (band==3)
+                        {
+                            cout<<"El seguro con más clientes es Seguro General\n";
+                        }
+                        else if (band==4)
+                        {
+                            cout<<"El seguro con más clientes es Seguros El Roble\n";
+                        }
+                        else if (band==5)
+                        {
+                            cout<<"El seguro con más clientes es Seguros Mapfre\n";
+                        }
+                    }
                 else {
-                    cout<<"No hay cliente con seguro"<<endl;
-                    cout<<"\n";
+                    cout<<"No se uso ninguna seguradora\n";
                 }
                 break;
             }
