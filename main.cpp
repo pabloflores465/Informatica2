@@ -1,9 +1,5 @@
 #include <iostream>
 #include <string>
-#include "algorithm"
-#include<tuple>
-#include <map>
-#include <climits>
 using namespace std;
 
 //NO TOCAR Seleccion de los modulos
@@ -24,7 +20,6 @@ string cantidadfarmacos[10]{"100 tabletas","2 ampollas","ml ","ml","12 tabletas"
 
 //Modulo 1
 //Precio de los farmacos
-//Cambié los arreglos para que queden en una misma linea para que así el codigo tenga menos lineas y se vea mas limpio.
 float preciofarmacos[10]{186.95,26.00,64.99,33.02,26.95,28.20,559.98,96.76,104.75,50.38};
 
 //Modulo 1
@@ -41,11 +36,15 @@ int agro=0, gene=0, robl=0, mapf=0;
 //Modulo 2
 //Taza de descuento fija
 float tazaDescuento[5]{0.25,0.60,0.40,0.5,0.75,};
-// Movi esto hacia para aca arriba para poder llamar esto en mi modulo 3
+//Información del comprador
 string titulartarjeta,fechavencimiento,codigotarjeta,numerotarjeta;
+//suma total de todos los articulos comprados en el día
 float suma=0.0;
+//Variable que guarda el numero asignado a la aseguradora
 int seguro=0;
+//Variable que guarda el descuento asignado de cada aseguradora
 int descuentoseguro;
+//Contador para el arreglo de los nombres
 int lola=0;
 string nombre[200];
 
@@ -357,6 +356,7 @@ void modulo1(){
         {
             cout<<"\n";
         }
+        //Contador que permite que funcione el if
         i++;
         cin>>modulo1;
         switch (modulo1)
@@ -560,6 +560,7 @@ void modulo1(){
                 //aplicacion del descuento de cada seguro
                 case 1:
                 {
+                    //Proceso que aplica el descuento de la aseguradora
                     descuentoaplicado=sumacl*0.75;
                     //contador de clientes de seguro gyt
                     gyt++;
@@ -567,6 +568,7 @@ void modulo1(){
                 }
                 case 2:
                 {
+                    //Proceso que aplica el descuento de la aseguradora
                     descuentoaplicado=sumacl*0.40;
                     //contador de clientes de seguro agromercantil
                     agro++;
@@ -574,6 +576,7 @@ void modulo1(){
                 }
                 case 3:
                 {
+                    //Proceso que aplica el descuento de la aseguradora
                     descuentoaplicado=sumacl*0.60;
                     //contador de clientes de Aseguradora general
                     gene++;
@@ -581,6 +584,7 @@ void modulo1(){
                 }
                 case 4:
                 {
+                    //Proceso que aplica el descuento de la aseguradora
                     descuentoaplicado=sumacl*0.5;
                     //contador de cliente sde seguros el Roble
                     robl++;
@@ -588,6 +592,7 @@ void modulo1(){
                 }
                 case 5:
                 {
+                    //Proceso que aplica el descuento de la aseguradora
                     descuentoaplicado=sumacl*0.25;
                     //contador de clientes de seguro Mapfre
                     mapf++;
@@ -612,6 +617,7 @@ void modulo1(){
         cin>>nombre[lola];
         //contador que recorre el arreglo de los nombres
         lola++;
+        //Datos de la tarjeta de credito para que ingrese el usuario
         cout<<"\n"
             <<"Ingrese la fecha de vencimiento de la tarjeta, ejemplo:4/23\n";
         cin>>fechavencimiento;
@@ -633,6 +639,7 @@ void modulo2(){
 
     //Pido al usuario que ingrese el seguro
     cout<<"Módulo de Seguros"<<endl;
+    //Mensaje de que el numero asignado con el seguro
     cout<<"Para ver información de copagos (descuento sobre medicinas), por favor elija su aseguradora (ingrese un dígito)"<<endl;
     cout<<"0=Seguros GyT\n"
         <<"1=Seguro Agromercantil\n"
@@ -684,8 +691,9 @@ void modulo3(){
                 break;
             }
             case 2:{
-
+                // si la variable descuentoseguro toma el valor de 1 significa que el usuario si cuenta con aseguradora
                 if (descuentoseguro==1){
+                    //informacion de las aseguradoras
                     cout << titulartarjeta ;
                     cout << "Informacion de las aseguradoras\n";
                     cout <<  "Seguros Gyt " <<"cuenta con "<<gyt <<" clientes"<<"\n";
@@ -694,80 +702,100 @@ void modulo3(){
                     cout <<  "Seguros el Roble " <<"cuenta con "<<robl <<" clientes" "\n";
                     cout << "Seguros Mapfre " <<"cuenta con "<<mapf <<" clientes" "\n";
                     cout<<"\n";
+                    //Variable que almacena el valor más grande
                     int mayor;
+                    //Variable que toma el valor del numero asignado a la aseguradora
                     int band=1;
                     for (int i=0;i<5;i++)
                     {
                         if (i==0)
                         {
+                            //mayor toma el valor de GyT
                             mayor=gyt;
                         }
                         else
                         {
                             if (agro>mayor)
                             {
+                                //mayor toma el valor de agro
                                 mayor=agro;
+                                //band toma el valor de 2
                                 band=2;
                             }
                             else if (gene>mayor)
                             {
+                                //mayor toma el valor de gene
                                 mayor=gene;
+                                //band toma el valor de 3
                                 band=3;
                             }
                             else if (robl>mayor)
                             {
+                                //mayor toma el valor de robl
                                 mayor=robl;
+                                //band toma el valor de 4
                                 band=4;
                             }
                             else if (mapf>mayor)
                             {
+                                //mayor toma el valor de mapf
                                 mayor=mapf;
+                                //band toma el valor de 5
                                 band=5;
                             }
                         }
                     }
-
+                    //Dependiendo del valor que tome band se seleccionará el caso de switchcase
+                    //band toma el valor de la aseguradora con más clientes
                     switch (band)
                     {
                         case 1:
                         {
+                            //Mensaje de la aseguradora con más clientes
                             cout<<"El seguro con más clientes es Seguro GyT\n";
                             break;
                         }
                         case 2:
                         {
+                            //Mensaje de la aseguradora con más clientes
                             cout<<"El seguro con más clientes es Seguro Agromercantil\n";
                             break;
                         }
                         case 3:
                         {
+                            //Mensaje de la aseguradora con más clientes
                             cout<<"El seguro con más clientes es Seguro General\n";
                             break;
                         }
                         case 4:
                         {
+                            //Mensaje de la aseguradora con más clientes
                             cout<<"El seguro con más clientes es Seguros El Roble\n";
                             break;
                         }
                         case 5:
                         {
+                            //Mensaje de la aseguradora con más clientes
                             cout<<"El seguro con más clientes es Seguros Mapfre\n";
                             break;
                         }
                     }
                     }
                 else {
+                    //mensaje de que no se utilizo ninguna aseguradora
                     cout<<"No se uso ninguna seguradora\n";
                 }
                 break;
             }
             default:{
+                //Se llama a la función mensajeError() para que muestre un mensaje de error
                 mensajeError();
                 break;
             }
         }
 
     }
+    //funciona hasta que el usuario presione el 0
     while (info!=0);
 
 }
@@ -964,5 +992,3 @@ void modulo4(){
 void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
-
-//LOLA Y RANDY Y LOLITA <3
