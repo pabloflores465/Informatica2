@@ -702,9 +702,9 @@ void modulo3(){
                     cout <<  "Seguros el Roble " <<"cuenta con "<<robl <<" clientes" "\n";
                     cout << "Seguros Mapfre " <<"cuenta con "<<mapf <<" clientes" "\n";
                     cout<<"\n";
-                    //Variable que almacena el valor más grande
+                    //Variable que almacena a la aseguradora con mas clientes
                     int mayor;
-                    //Variable que toma el valor del numero asignado a la aseguradora
+                    //Variable que toma el valor del numero asignado de la aseguradora con mas clientes
                     int band=1;
                     for (int i=0;i<5;i++)
                     {
