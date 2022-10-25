@@ -120,80 +120,101 @@ int main() {
         //Ingresan la contraseña
         cout<<"Contraseña"<<endl;
         cin>>contraADMIN;
+        //Se compreuba que el usuario y la contraseña sean los correctos
         if (nombreADMIN=="ADMIN"&&contraADMIN=="admin"){
+            //Se ejecuta el modulo 4
             modulo4();
         }
+        //En caso de no ser la misma se da un mensaje de error
         else {
             cout<<"ERROR: Usuario o Contraseña de administrador incorrectos"<<endl;
         }
     }
+   //Esto es para que se ejecute hasta que el usuario y la contraseña sean los correctos
     while (nombreADMIN!="ADMIN"||contraADMIN!="admin");
-
+    //Se ejecutan la seleccion de usuarios
     do{
+        //Se le pide que seleccione su rol
         cout<<"Bienvenido a Farmacias Batres"<<endl;
         cout<<"¿Quien es usted?\n"
             <<"1=Cliente\n"
             <<"2=Empleado\n"
             <<"3=Otro\n";
+        //Se ingresa el rol deseado
         cin>>rolIngresado;
+        //Caso en el que el rol ingresado sea cliente
         if (rolIngresado==1){
-
+            //Se le pide que ingrese el usuario
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
+            //Se crea un contador
             contadorGeneral=0;
+            //Se verifica en todos los usuarios con el contador, que el usuario esté en la base de datos
             while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&bloqueado[contadorGeneral]!=1){
+                //Si el usuario no cumple con las caracteristicas se suma uno al contador
                 contadorGeneral++;
             }
-
+            //En el caso de que el usuario esté en la base de datos, se procede a ingresar la contaseña
             if (contadorGeneral<200&&nombreCliente==usuario[contadorGeneral]&&rol[contadorGeneral]==0&&bloqueado[contadorGeneral]==0) {
                 //Ingresan la contraseña
-
+                //Si el usuario no esta bloquedo ingresan la contraseña
                 if (bloqueado[contadorGeneral]!=1) {
                     cout << "Contraseña" << endl;
                     cin >> contraCliente;
                 }
-
+                //Verifica que la contraseña ingresada sea la correcta
                 if (contraCliente == password[contadorGeneral]) {
-
+                    //Se ejetuan los modulos hasta que no se cumpla la condicion
                     do {
+                        //Se le pregunta a que modulo quieren ingresar
                         cout << "¿A que modulo quieres ingresar?\n"
                              << "1=Farmacias\n"
                              << "2=Seguros\n"
                              << "0=Cerrar Sesión\n"
                              << endl;
+                        //ingresan el modulo al que quieren acceder
                         cin >> modulo;
+                        //Se seleccionan los casos del módulo
                         switch (modulo) {
+                            //Caso 0 se cierra la sesión
                             case 0:{
                                 cout<<"Sesion cerrada con éxito"<<endl;
                                 break;
                             }
+                            //Caso 1 se ejercuta el módulo 1
                             case 1: {
                                 modulo1();
                                 break;
                             }
+                            //caso 2 se ejecuta el modulo 2
                             case 2: {
                                 modulo2();
                                 break;
                             }
+                            //Mensaje de error
                             default: {
                                 cout << "Error valor no valido" << endl;
                                 break;
                             }
                         }
                     }
+                    //Condicion que se tiene que cumplir para salir del ciclo
                     while (modulo!=0);
 
                 }
+                //Si la contraseña no coincide, se
                 else {
                     cout<<"Contraseña incorrecta"<<endl;
                     intentos++;
                 }
+                //Si los intentos de contraseña fallidos, excenden a los 3 el usuario se bloquea
                 if(intentos>3){
                     bloqueado[contadorGeneral]=1;
                     cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
                 }
 
             }
+            //Si se verifica en el arreglo los usuarios ingresados y no está en la base de datos se dice que lo vuelvan a ingresar
             else {
                 cout<<"Usuario no encotrado, por ingreselo de nuevo"<<endl;
             }
@@ -208,15 +229,23 @@ int main() {
             cout<<"Contraseña"<<endl;
             cin>>contraDep;
 
+            //Se crea el contador
             contadorGeneral=0;
+            //Se verifica que en toda la base de datos
             while (contadorGeneral<200){
+                //Se verifica que el usuario este en la base de datos
                 if (nombreDep==usuario[contadorGeneral]&&contraDep==password[contadorGeneral]&&rol[contadorGeneral]==1){
+                    //Variable que verifica que si es dependiente
                     dependiente=1;
                 }
+                //Suma al contador
                 contadorGeneral++;
             }
+            //Si dependiente se verifico en el la base de datos y existe entonces
             if (dependiente==1){
+                //Se ejecutan los modulos en bucle hasta que se cierre sesion
                 do{
+                    //Se le pide que ingresen al módulo deseado
                     cout<<"¿A que modulo quieres ingresar?\n"
                         <<"1=Farmacias\n"
                         <<"2=Seguros\n"
@@ -224,35 +253,44 @@ int main() {
                         <<"0=Cerrar Sesión\n"
                         <<endl;
                     cin>>modulo;
+                    //Se evalua modulo
                     switch (modulo) {
+                        //Caso 0: Se ejecuta cierre de sesion
                         case 0:{
                             cout<<"Sesión cerrada con éxito"<<endl;
                             break;
                         }
+                        //Caso 1: Se ejercuta el modulo 1
                         case 1:{
                             modulo1();
                             break;
                         }
+                        //Caso 2: Se ejecuta el modulo 2
                         case 2:{
                             modulo2();
                             break;
                         }
+                        //Caso 3: Se ejecuta el modulo 3
                         case 3:{
                             modulo3();
                             break;
                         }
+                        //Se da un mensaje de error si no se cumplen con los parametros desados.
                         default:{
                             cout<<"Error valor no valido"<<endl;
                             break;
                         }
                     }
                 }
+                //Condicion para salir de los modulos
                 while (modulo!=0);
             }
+            //Mensaje de error si el usuario o cantraseña son incorrectos
             else {
                cout<<"Empleado no econtrado, por favor pruebe de nuevo"<<endl;
             }
         }
+        //En caso de que ingresen a Otro caso se verifica si el usuario es el administrador
         else if (rolIngresado==3){
             //Ingresan el usuario
             cout<<"Usuario"<<endl;
@@ -260,15 +298,21 @@ int main() {
             //Ingresan la contraseña
             cout<<"Contraseña"<<endl;
             cin>>contraADMIN;
+            //Se usa el mismo contador general
             contadorGeneral=0;
+            //Se verifica en la base de que el usuario y la contraseña sea la de administrador
             while (contadorGeneral<200){
                 if (nombreADMIN=="ADMIN"&&contraADMIN=="admin"){
+                    //Se verifica que el administrador sea correcto
                     administrador=1;
                 }
                 contadorGeneral++;
             }
+            //Si administrador se verifica como correcto
             if (administrador==1){
+                //Se ejecuta el ciclo de seleccion de modulos hasta que se cierre sesion
                 do {
+                    //Se le pide al usuario que ingrese al modulo que quiera ingresar
                     cout<<"¿A que modulo quieres ingresar?\n"
                         <<"1=Farmacias\n"
                         <<"2=Seguros\n"
@@ -277,41 +321,51 @@ int main() {
                         <<"0=Cerrar Sesión\n"
                         <<endl;
                     cin>>modulo;
+                    //Se evalua la variable modulo
                     switch (modulo) {
+                        //Caso 0: Se cierra sesion
                         case 0:{
                             cout<<"Sesión cerrada con éxito"<<endl;
                             break;
                         }
+                        //Caso 1: Se ejecuta el modulo 1
                         case 1:{
                             modulo1();
                             break;
                         }
+                        //Caso 2: Se ejecutal el modulo 2
                         case 2:{
                             modulo2();
                             break;
                         }
+                        //Caso 3: Se ejecuta el modulo 3
                         case 3:{
                             modulo3();
                         }
+                        //Caso 4: Se ejecuta el modulo 4
                         case 4:{
                             modulo4();
                             break;
                         }
+                        //Mesaje de error
                         default:{
                             cout<<"Error valor no valido"<<endl;
                             break;
                         }
                     }
                 }
+                //Condicion para terminar la seleccion de modulo
                 while (modulo!=0);
             }
+            //Se le muestra mensaje de error si el usuario y contraseña administrador son incorrectos
             else {
                 cout<<"Usuario administrador incorrecto,por favor pruebe de nuevo"<<endl;
             }
         }
     }
+    //Se ejecuta el condigo mientras el rol no sea 0
     while(rolIngresado!=0);
-
+    //Termina ejecucion
     return 0;
 }
 
@@ -989,6 +1043,7 @@ void modulo4(){
     }
     while (accion!=0);
 }
+//Funcion de mensaje de error, solo para ahorrar codigo
 void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
