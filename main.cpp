@@ -870,10 +870,12 @@ void modulo4(){
 
         //Creacion de usuarios
         switch (accion) {
+            //Caso 0 Cierra el modulo
             case 0:{
                 cout<<"Módulo cerrado correctamente"<<endl;
                 break;
             }
+            //Caso 1: Creacion de usuarios
             case 1:{
                 cout<<"Ingrese la información del usuario que desea crear\n";
                 //Usuario
@@ -897,81 +899,99 @@ void modulo4(){
                 contador++;
                 break;
             }
+            //Caso 2 Modificar la exitencia de los farmacos
             case 2:{
+                //Varaible que selecciona el numero de medicamento
                 int switchcase;
+                //Se le pide al usuario que seleccionen los medicamentos hasta que se cumpla con una condicion
                 do {
+                    //Se le muestran los famarmacos
                     int numero = 1;
                     for (auto & nombrefarmaco : nombrefarmacos) {
                         cout << "Presione (" << numero++ << ") para elegir " << nombrefarmaco << "\n";
                     }
+                    //Se le pide que ingrese las medicina al que se quiere modificar las existencias
                     cout << "Ingrese el articulo al cual le quiere modificar las existencias o cero para finalizar el proceso\n";
                     cin >> switchcase;
+                    //Se evalua switchcase
                     switch (switchcase) {
+                        //Se muestra que se modificaron las existencias correctamente
                         case 0:
                         {
                             cout<<"Cambios realizados\n";
                             break;
                         }
+                        //Medicina 1
                         case 1: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[0]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[0];
                             break;
                         }
+                        //Medicina 2
                         case 2: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[1]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[1];
                             break;
                         }
+                        //Medicina 3
                         case 3: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[2]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[2];
                             break;
                         }
+                        //Medicina 4
                         case 4: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[3]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[3];
                             break;
                         }
+                        //Medicina 5
                         case 5: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[4]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[4];
                             break;
                         }
+                        //Medicina 6
                         case 6: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[5]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[5];
                             break;
                         }
+                        //Medicina 7
                         case 7: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[6]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[6];
                             break;
                         }
+                        //Medicina 8
                         case 8: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[7]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[7];
                             break;
                         }
+                        //Meidcina 9
                         case 9: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[8]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[8];
                             break;
                         }
+                        //Medicina 10
                         case 10: {
                             cout << "La existencia del farmaco es de " << existenciasfarmacos[9]<<"\n";
                             cout << "Ingrese el nuevo valor de la existencia\n";
                             cin >> existenciasfarmacos[9];
                             break;
                         }
+                        //Mesaje de error
                         default:{
                             mensajeError();
                             break;
@@ -979,9 +999,11 @@ void modulo4(){
                     }
 
                 }
+                //Condicion para salir de la modificacion de medicinas
                 while (switchcase != 0);
                 break;
             }
+            //Caso 3: Bloquear o desbloquear
             case 3:{
                 int verificar1=0,e=0;
                 string estadoUsuario;
@@ -1009,6 +1031,7 @@ void modulo4(){
                 }
                 break;
             }
+            //Caso 4: Cambiar contraseñas al usuario
             case 4:{
                 int verificar2=0, posicion=0;
                 string usuarioSeleccionado;
@@ -1030,17 +1053,20 @@ void modulo4(){
                 }
                 break;
             }
+            //Caso 5: Muestra la suma total de las ventas
             case 5:{
                 cout << "El total de ventas es: \n";
                 cout << suma << "\n";
                 break;
             }
+            //Mesaje de error
             default:{
                 cout<<"Error entrada no válida"<<endl;
                 break;
             }
         }
     }
+    //Condicion que cierra el modulo
     while (accion!=0);
 }
 //Funcion de mensaje de error, solo para ahorrar codigo
