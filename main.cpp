@@ -956,4 +956,4 @@ void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
 
-//LOLITA Y RANDY
+//LOLITA Y RANDY XD
