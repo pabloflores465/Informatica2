@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <string>
 using namespace std;
 
@@ -831,6 +830,9 @@ void modulo3(){
                             //Mensaje de la aseguradora con más clientes
                             cout<<"El seguro con más clientes es Seguros Mapfre\n";
                             break;
+                        }
+                        default:{
+                            mensajeError();
                         }
                     }
                     }
