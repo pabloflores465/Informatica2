@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include <string>
 using namespace std;
 
@@ -128,7 +129,6 @@ int main() {
         else {
             cout<<"ERROR: Usuario o Contraseña de administrador incorrectos"<<endl;
         }
-       system("clear");
     }
 
    //Esto es para que se ejecute hasta que el usuario y la contraseña sean los correctos
@@ -140,7 +140,8 @@ int main() {
         cout<<"¿Quien es usted?\n"
             <<"1=Cliente\n"
             <<"2=Empleado\n"
-            <<"3=Otro\n";
+            <<"3=Otro\n"
+            <<"0=Finalizar Ejecución\n";
         //Se ingresa el rol deseado
         cin>>rolIngresado;
         //Caso en el que el rol ingresado sea cliente
@@ -216,13 +217,6 @@ int main() {
                 while (modulo!=0);
 
             }
-            //Si los intentos de contraseña fallidos, excenden a los 3 el usuario se bloquea
-
-
-
-
-            //Si se verifica en el arreglo los usuarios ingresados y no está en la base de datos se dice que lo vuelvan a ingresar
-
 
         }
         else if (rolIngresado==2){
@@ -687,7 +681,7 @@ void modulo1(){
             <<"Ingrese el codigo de su tarjeta, ejemplo 456\n";
         cin>>codigotarjeta;
         cout<<"\n\n"
-            <<"PAGO EXITOSO\n\n";
+            <<" PAGO EXITOSO\n\n";
     }
 }
 
