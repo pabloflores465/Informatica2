@@ -147,77 +147,79 @@ int main() {
             //Se le pide que ingrese el usuario
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
-            //Se crea un contador
-            contadorGeneral=0;
-            //Se verifica en todos los usuarios con el contador, que el usuario esté en la base de datos
-            while(contadorGeneral<200&&nombreCliente!=usuario[contadorGeneral]&&bloqueado[contadorGeneral]!=1){
-                //Si el usuario no cumple con las caracteristicas se suma uno al contador
-                contadorGeneral++;
-            }
-            //En el caso de que el usuario esté en la base de datos, se procede a ingresar la contaseña
-            if (contadorGeneral<200&&nombreCliente==usuario[contadorGeneral]&&rol[contadorGeneral]==0&&bloqueado[contadorGeneral]==0) {
-                //Ingresan la contraseña
-                //Si el usuario no esta bloquedo ingresan la contraseña
-                if (bloqueado[contadorGeneral]!=1) {
+            int usuarioCorrecto=0;
+            //Verificar que la contraseña sea correcta
+            int contraCorrecta=0;
+
+            for (int contadorG=0;contadorG<200;contadorG++){
+                while(nombreCliente==usuario[contadorG]&&bloqueado[contadorG]!=1&&contraCorrecta!=1){
+                    usuarioCorrecto=1;
                     cout << "Contraseña" << endl;
                     cin >> contraCliente;
+                    if (contraCliente == password[contadorG]) {
+                        contraCorrecta=1;
+                    }
+                    else {
+                        cout<<"Contraseña incorrecta, por favor vuelva a intentarlo."<<endl;
+                        intentos++;
+                        cout<<"Intentos restantes: "<<3-intentos<<endl;
+                    }
+                    if(intentos>=3){
+                        bloqueado[contadorG]=1;
+                        cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
+                    }
                 }
-                //Verifica que la contraseña ingresada sea la correcta
-                if (contraCliente == password[contadorGeneral]) {
-                    //Se ejetuan los modulos hasta que no se cumpla la condicion
-                    do {
-                        //Se le pregunta a que modulo quieren ingresar
-                        cout << "¿A que modulo quieres ingresar?\n"
-                             << "1=Farmacias\n"
-                             << "2=Seguros\n"
-                             << "0=Cerrar Sesión\n"
-                             << endl;
-                        //ingresan el modulo al que quieren acceder
-                        cin >> modulo;
-                        //Se seleccionan los casos del módulo
-                        switch (modulo) {
-                            //Caso 0 se cierra la sesión
-                            case 0:{
-                                cout<<"Sesion cerrada con éxito"<<endl;
-                                break;
-                            }
+            }
+            if (usuarioCorrecto==0) {
+                cout<<"Error, Usuario no encotrado, por ingreselo de nuevo"<<endl;
+            }
+            //Verifica que la contraseña ingresada sea la correcta
+            if (contraCorrecta==1) {
+                //Se ejetuan los modulos hasta que no se cumpla la condicion
+                do {
+                    //Se le pregunta a que modulo quieren ingresar
+                    cout << "¿A que modulo quieres ingresar?\n"
+                         << "1=Farmacias\n"
+                         << "2=Seguros\n"
+                         << "0=Cerrar Sesión\n"
+                         << endl;
+                    //ingresan el modulo al que quieren acceder
+                    cin >> modulo;
+                    //Se seleccionan los casos del módulo
+                    switch (modulo) {
+                        //Caso 0 se cierra la sesión
+                        case 0:{
+                            cout<<"Sesion cerrada con éxito"<<endl;
+                            break;
+                        }
                             //Caso 1 se ejercuta el módulo 1
-                            case 1: {
-                                modulo1();
-                                break;
-                            }
+                        case 1: {
+                            modulo1();
+                            break;
+                        }
                             //caso 2 se ejecuta el modulo 2
-                            case 2: {
-                                modulo2();
-                                break;
-                            }
+                        case 2: {
+                            modulo2();
+                            break;
+                        }
                             //Mensaje de error
-                            default: {
-                                cout << "Error valor no valido" << endl;
-                                break;
-                            }
+                        default: {
+                            cout << "Error valor no valido" << endl;
+                            break;
                         }
                     }
+                }
                     //Condicion que se tiene que cumplir para salir del ciclo
-                    while (modulo!=0);
-
-                }
-                //Si la contraseña no coincide, se
-                else {
-                    cout<<"Contraseña incorrecta"<<endl;
-                    intentos++;
-                }
-                //Si los intentos de contraseña fallidos, excenden a los 3 el usuario se bloquea
-                if(intentos>3){
-                    bloqueado[contadorGeneral]=1;
-                    cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
-                }
+                while (modulo!=0);
 
             }
+            //Si los intentos de contraseña fallidos, excenden a los 3 el usuario se bloquea
+
+
+
+
             //Si se verifica en el arreglo los usuarios ingresados y no está en la base de datos se dice que lo vuelvan a ingresar
-            else {
-                cout<<"Usuario no encotrado, por ingreselo de nuevo"<<endl;
-            }
+
 
         }
         else if (rolIngresado==2){
@@ -615,7 +617,7 @@ void modulo1(){
                 case 1:
                 {
                     //Proceso que aplica el descuento de la aseguradora
-                    descuentoaplicado=sumacl*0.75;
+                    descuentoaplicado=sumacl*(1-tazaDescuento[0]);
                     //contador de clientes de seguro gyt
                     gyt++;
                     break;
@@ -623,7 +625,7 @@ void modulo1(){
                 case 2:
                 {
                     //Proceso que aplica el descuento de la aseguradora
-                    descuentoaplicado=sumacl*0.40;
+                    descuentoaplicado=sumacl*(1-tazaDescuento[1]);
                     //contador de clientes de seguro agromercantil
                     agro++;
                     break;
@@ -631,7 +633,7 @@ void modulo1(){
                 case 3:
                 {
                     //Proceso que aplica el descuento de la aseguradora
-                    descuentoaplicado=sumacl*0.60;
+                    descuentoaplicado=sumacl*(1-tazaDescuento[2]);
                     //contador de clientes de Aseguradora general
                     gene++;
                     break;
@@ -639,7 +641,7 @@ void modulo1(){
                 case 4:
                 {
                     //Proceso que aplica el descuento de la aseguradora
-                    descuentoaplicado=sumacl*0.5;
+                    descuentoaplicado=sumacl*(1-tazaDescuento[3]);
                     //contador de cliente sde seguros el Roble
                     robl++;
                     break;
@@ -647,7 +649,7 @@ void modulo1(){
                 case 5:
                 {
                     //Proceso que aplica el descuento de la aseguradora
-                    descuentoaplicado=sumacl*0.25;
+                    descuentoaplicado=sumacl*(1-tazaDescuento[4]);
                     //contador de clientes de seguro Mapfre
                     mapf++;
                     break;
@@ -864,6 +866,7 @@ void modulo4(){
              <<"3=Bloquear o Desbloquear Usuarios\n"
              <<"4=Cambiar Contraseñas\n"
              <<"5=Ver las ventas totales\n"
+             <<"6=Modificar la cuota de descuento de los seguros\n"
              <<"0=Cerrar modulo\n"
              <<endl;
         cin>>accion;
@@ -1057,6 +1060,29 @@ void modulo4(){
             case 5:{
                 cout << "El total de ventas es: \n";
                 cout << suma << "\n";
+                break;
+            }
+            case 6:{
+                int seguroModificado=0;
+                string nuevaTaza;
+                cout<<"La taza de actual descuento de los seguros es: "<<endl;
+                for(int d=0;d<5;d++){
+                    cout<<aseguradora[d]<<": "<<tazaDescuento[d]*100<<"%\n";
+                }
+                cout<<"Ingrese el seguro al que quiere modificarle la taza: "<<endl;
+                cin.ignore();
+                getline(cin,nuevaTaza);
+                for (int nT=0;nT<5;nT++){
+                    if (nuevaTaza==aseguradora[nT]){
+                        cout<<"Ingrese la nueva taza de descuento para el seguro (Numeros Enteros)"<<endl;
+                        cin>>tazaDescuento[nT];
+                        tazaDescuento[nT]=tazaDescuento[nT]/100;
+                        seguroModificado=1;
+                    }
+                }
+                if (seguroModificado==0){
+                    mensajeError();
+                }
                 break;
             }
             //Mesaje de error
