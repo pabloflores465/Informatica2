@@ -1,3 +1,0 @@
-/Users/Joser2/Documents/Informatica2/cmake-build-debug/CMakeFiles/Informatica2.dir
-/Users/Joser2/Documents/Informatica2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Joser2/Documents/Informatica2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

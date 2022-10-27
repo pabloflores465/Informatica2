@@ -97,8 +97,7 @@ int main() {
     int dependiente;
     //Se usa para verificar que sea un cliente
     int administrador;
-    //No. de Intentos restantes
-    int intentos=0;
+
     //Este es el usuario del Administrador
     string nombreADMIN;
     //Esta es la contraseña del Administrador
@@ -129,7 +128,9 @@ int main() {
         else {
             cout<<"ERROR: Usuario o Contraseña de administrador incorrectos"<<endl;
         }
+       system("clear");
     }
+
    //Esto es para que se ejecute hasta que el usuario y la contraseña sean los correctos
     while (nombreADMIN!="ADMIN"||contraADMIN!="admin");
     //Se ejecutan la seleccion de usuarios
@@ -144,6 +145,8 @@ int main() {
         cin>>rolIngresado;
         //Caso en el que el rol ingresado sea cliente
         if (rolIngresado==1){
+            //No. de Intentos restantes
+            int intentos=0;
             //Se le pide que ingrese el usuario
             cout<<"Usuario"<<endl;
             cin>>nombreCliente;
@@ -152,7 +155,7 @@ int main() {
             int contraCorrecta=0;
 
             for (int contadorG=0;contadorG<200;contadorG++){
-                while(nombreCliente==usuario[contadorG]&&bloqueado[contadorG]!=1&&contraCorrecta!=1){
+                while(nombreCliente==usuario[contadorG]&&rol[contadorG]==0&&bloqueado[contadorG]!=1&&contraCorrecta!=1){
                     usuarioCorrecto=1;
                     cout << "Contraseña" << endl;
                     cin >> contraCliente;
@@ -171,7 +174,7 @@ int main() {
                 }
             }
             if (usuarioCorrecto==0) {
-                cout<<"Error, Usuario no encotrado, por ingreselo de nuevo"<<endl;
+                cout<<"Error, Usuario no encotrado o bloqueado, por ingrese de nuevo el usuario o contactese con el administrador"<<endl;
             }
             //Verifica que la contraseña ingresada sea la correcta
             if (contraCorrecta==1) {
