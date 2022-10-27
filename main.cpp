@@ -831,9 +831,6 @@ void modulo3(){
                             cout<<"El seguro con más clientes es Seguros Mapfre\n";
                             break;
                         }
-                        default:{
-                            mensajeError();
-                        }
                     }
                     }
                 else {
