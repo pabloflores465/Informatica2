@@ -174,7 +174,7 @@ int main() {
                 }
             }
             if (usuarioCorrecto==0) {
-                cout<<"Error, Usuario no encotrado o bloqueado, por ingrese de nuevo el usuario o contactese con el administrador"<<endl;
+                cout<<"Error, Usuario no encotrado o bloqueado, por favor ingrese de nuevo el usuario o contactese con el administrador"<<endl;
             }
             //Verifica que la contraseña ingresada sea la correcta
             if (contraCorrecta==1) {
@@ -1095,3 +1095,5 @@ void modulo4(){
 void mensajeError(){
     cout<<"Error valor ingresado no válido"<<endl;
 }
+
+//A Alonzo le gusta Silvia
