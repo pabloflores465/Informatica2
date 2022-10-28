@@ -170,6 +170,7 @@ int main() {
                     if(intentos>=3){
                         bloqueado[contadorG]=1;
                         cout<<"Error el usuario se bloqueo por el uso de demasiados intentos"<<endl;
+                        system("color 4");
                     }
                 }
             }
